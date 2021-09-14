@@ -1,55 +1,206 @@
-/**
- * This injects Tailwind's base styles, which is a combination of
- * Normalize.css and some additional base styles.
- *
- * You can see the styles here:
- * https://unpkg.com/tailwindcss/dist/base.css
- */
-@tailwind base;
 
-/**
- * Remove the default box-shadow for invalid elements to prevent
- * inputs in Livewire components showing with a
- * red border by default in Firefox.
- *
- * See: https://github.com/laravel-frontend-presets/tall/issues/7
- */
- input:invalid, textarea:invalid, select:invalid {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input:invalid, textarea:invalid, select:invalid {
     box-shadow: none;
 }
 
-/**
- * This injects any component classes registered by plugins.
- */
-@tailwind components;
 
-/**
- * Here you would add any of your custom component classes; stuff that you'd
- * want loaded *before* the utilities so that the utilities could still
- * override them.
- *
- * Example:
- *
- * .btn { ... }
- * .form-input { ... }
- */
-
-/**
- * This injects all of Tailwind's utility classes, generated based on your
- * config file.
- */
-@tailwind utilities;
-
-/**
- * Here you would add any custom utilities you need that don't come out of the
- * box with Tailwind.
- *
- * Example :
- *
- * .bg-pattern-graph-paper { ... }
- * .skew-45 { ... }
- */
 
 [x-cloak] {
     display: none;
+}
+
+
+
+$themeBlue: #1E2D7D;
+$themeTaqu: #33C8E2;
+
+$themeWhite : #f5f5f6;
+$themeDark : #677279;
+
+
+$generalPadding: 0 50px;
+$reachUsHeight: 42px;
+$brandMinHeight: 84px;
+
+html , body{
+
+    @apply p-0 m-0 ;
+
+    // padding: 0;
+    // margin: 0;
+    box-sizing: border-box;
+   
+    font-family: "DIN Next",sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.87;
+}
+
+.scecomm-container{
+    padding: $generalPadding;
+
+}
+
+
+body{
+    // background: $themeWhite;
+    @apply bg-primary-3;
+}
+
+
+header{   
+
+    
+    background-color: $themeBlue;
+
+    .reach-us{
+
+        @apply flex justify-between items-center;
+
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        padding: $generalPadding;
+        height: $reachUsHeight;
+        border-bottom: 1px rgba($themeWhite , .4) solid;
+
+        .contact-info{
+            color: $themeWhite;
+        }
+
+        button{
+            @apply flex justify-between items-center;
+            border: none;
+            background-color: $themeTaqu;
+            color: $themeWhite;
+            height: 100%;
+            padding: calc(#{$reachUsHeight} / 2);
+        }
+
+    }
+
+    .brand-name-search{
+        @apply flex justify-between items-center;
+
+        // display: flex;
+        // justify-content: space-between;
+        // align-items: center;
+        padding: $generalPadding;
+        min-height: $brandMinHeight;
+        width:100%;
+
+        span{
+            font-size: 20px;
+            color: $themeWhite;
+        }
+
+        form{
+            @apply flex justify-between;
+            width: 85%;
+            height: 44px;
+            // background-color: white;
+            @apply bg-primary-3 rounded-sm;
+
+            input{
+                width:79%;
+                background-color: transparent;
+                border:none;
+                outline: none;
+
+            }
+
+            select{
+                width: 15%;
+                background-color: transparent;
+            border:none;
+
+            }
+             button{
+                border:none;
+                @apply bg-primary-2;
+                width: 5%;
+                height:100%;
+
+             }
+        }
+    }
+
+   
+
+}
+
+
+nav{
+    @apply flex justify-between items-center;
+    height: 64px;
+    border-bottom: 1px rgba($themeDark,.4) solid;
+    background-color: $themeWhite;
+    padding: $generalPadding;
+    width: 100%;
+
+
+
+    ul{
+
+        display: flex;
+        padding: 0;
+        margin: 0;
+
+        li{
+
+
+            list-style: none;
+
+
+
+            a{
+
+                text-decoration: none;
+                color: $themeDark;
+                font-size: 16px;
+
+            }
+
+            &:not(:last-child){
+                margin-right:30px;
+            }
+
+        }
+
+    }
+
+}
+
+
+section.showcase {
+    height:380px;
+
+
+    .showcase-content{
+        max-width: 50%;
+        height: 100%;
+        @apply flex flex-col justify-center;
+
+        h2{
+            @apply  text-primary-1;
+            font-size: 30px;
+        }
+
+        p{
+            @apply  text-primary-1;
+            font-size: 14px;
+
+        }
+
+        button{
+            border:none;
+            @apply bg-primary-2 text-primary-3 py-2 w-1/6;
+
+        }
+    }
 }
