@@ -1,12 +1,26 @@
 <div class="navbar-wrapper">
-    
+
+    <div class="discounts-special-offers">
+        <span class="close-btn" id="close-offer-btn"><i class="ti-close"></i></span>
+        <h2>Discounts & Special Offers</h2>
+        
+        <p>Keep in touch with us for special offers and discounts!</p>
+        <form action="">
+            <input type="text" placeholder="Enter Your Email...">
+            
+            <button>Subscribe</button>
+        </form>
+
+    </div>
+
     <header>
+        
         <div class="reach-us">
             <div class="contact-info">
               Contact: support@ecomm.shop -Tel: 0712345678
             </div>
   
-            <button>
+            <button id="special-offer-btn">
                 Subscribe For Special Offers
             </button>
         </div>
@@ -18,7 +32,7 @@
               <select name="" id="">
                   <option value="">All Categories</option>
               </select>
-              <button>Search</button>
+              <button><i class="ti-search"></i></button>
           </form>
         </div>
        

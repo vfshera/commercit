@@ -6,7 +6,7 @@ module.exports = {
             primary: {
               1:"#1E2D7D",
               2:"#33C8E2",
-              3:"#f5f5f6",
+              3:"#f3f5f6",
               4:"#677279",
             }  ,
         extend: {
