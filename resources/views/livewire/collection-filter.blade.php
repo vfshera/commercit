@@ -14,12 +14,21 @@
             x-transition:leave-start="opacity-100 transform "
             x-transition:leave-end="opacity-0 transform "
             >
+
+                <div class="filter">
+                    <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}"  value="" id="{{ strtolower($filterGroup)."-filter" }}" checked>
+                    <label for="{{ strtolower($filterGroup)."-filter" }}">Any</label>
+                </div>
+
                 @foreach($filtersList as $filter)
                     <div class="filter">
-                        <input type="radio" name="{{ $filterGroup }}" id="{{ $filterGroup }}">
-                        <label for="{{ $filterGroup }}">{{ $filter }}</label>
+                        <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}" value="{{ strtolower($filter) }}" id="{{ strtolower($filterGroup)."-filter" }}">
+                        <label for="{{ strtolower($filterGroup)."-filter" }}">{{ ucfirst($filter) }}</label>
                     </div>
                 @endforeach
+
+                
+
             </div>
             
         </div>
