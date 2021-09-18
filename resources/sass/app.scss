@@ -64,163 +64,151 @@ body {
 }
 
 // GLOBALS END
-.discounts-special-offers{
+.discounts-special-offers {
     background-color: $themeWhite;
-    height:40vh;
+    height: 40vh;
     width: 100%;
-    @apply  flex flex-col justify-center items-center ;
+    @apply flex flex-col justify-center items-center;
 
+    .close-btn {
+        cursor: pointer;
 
-    .close-btn{
-        cursor: pointer;        
-
-        i.ti-close{    
-            font-size:24px;
+        i.ti-close {
+            font-size: 24px;
             color: #111111;
             margin-bottom: 10px;
 
-            &:hover{
+            &:hover {
                 background: rgba(red, 0.4);
-                padding:12px;
-                border-radius:50%;
+                padding: 12px;
+                border-radius: 50%;
             }
         }
     }
 
-    h2{
+    h2 {
         @apply text-primary-1 text-center w-full text-3xl  font-semibold;
     }
 
-    p{
-        @apply text-primary-4 text-center w-full text-lg ;
+    p {
+        @apply text-primary-4 text-center w-full text-lg;
     }
 
-
-    form{
-
+    form {
         @apply w-1/2 flex justify-center;
 
-        input{
-            width:50%;
+        input {
+            width: 50%;
             height: 100%;
             @apply p-3 rounded mb-2;
-
         }
-        button{
+        button {
             @apply bg-primary-2 text-primary-3 rounded ml-2 py-2 px-5;
         }
     }
 }
 
+// NAVBAR
+.navbar-wrapper {
+    header {
+        background-color: $themeBlue;
 
-header {
-    background-color: $themeBlue;
+        .reach-us {
+            @apply flex justify-between items-center;
 
+            padding: $generalPadding;
+            height: $reachUsHeight;
+            border-bottom: 1px rgba($themeWhite, 0.4) solid;
 
-    
+            .contact-info {
+                color: $themeWhite;
+            }
 
-    .reach-us {
-        @apply flex justify-between items-center;
-
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
-        padding: $generalPadding;
-        height: $reachUsHeight;
-        border-bottom: 1px rgba($themeWhite, 0.4) solid;
-
-        .contact-info {
-            color: $themeWhite;
+            button {
+                @apply flex justify-between items-center;
+                border: none;
+                background-color: $themeTaqu;
+                color: $themeWhite;
+                height: 100%;
+                padding: calc(#{$reachUsHeight} / 2);
+            }
         }
 
-        button {
+        .brand-name-search {
             @apply flex justify-between items-center;
-            border: none;
-            background-color: $themeTaqu;
-            color: $themeWhite;
-            height: 100%;
-            padding: calc(#{$reachUsHeight} / 2);
+
+            padding: $generalPadding;
+            min-height: $brandMinHeight;
+            width: 100%;
+
+            span {
+                font-size: 20px;
+                color: $themeWhite;
+            }
+
+            form {
+                @apply flex justify-between;
+                width: 85%;
+                height: 44px;
+                overflow: hidden;
+                @apply bg-primary-3 rounded-md;
+
+                input {
+                    width: 79%;
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    padding: 0 10px;
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+
+                select {
+                    width: 15%;
+                    background-color: transparent;
+                    border: none;
+                }
+                button {
+                    border: none;
+                    @apply flex justify-center items-center bg-primary-2;
+                    width: 5%;
+                    height: 100%;
+
+                    i {
+                        color: white;
+                        font-size: 22px;
+                    }
+                }
+            }
         }
     }
 
-    .brand-name-search {
-        @apply flex justify-between items-center;
-
-        // display: flex;
-        // justify-content: space-between;
-        // align-items: center;
+    nav {
+        @apply flex justify-between items-center bg-white;
+        height: 64px;
+        border-bottom: 1px rgba($themeDark, 0.4) solid;
         padding: $generalPadding;
-        min-height: $brandMinHeight;
         width: 100%;
 
-        span {
-            font-size: 20px;
-            color: $themeWhite;
-        }
+        ul {
+            display: flex;
+            padding: 0;
+            margin: 0;
 
-        form {
-            @apply flex justify-between;
-            width: 85%;
-            height: 44px;
-            // background-color: white;
-            overflow: hidden;
-            @apply bg-primary-3 rounded-md;
+            li {
+                list-style: none;
 
-            input {
-                width: 79%;
-                background-color: transparent;
-                border: none;
-                outline: none;
-
-                &:focus{
-                    outline: none;
+                a {
+                    text-decoration: none;
+                    color: $themeDark;
+                    font-size: 16px;
                 }
-            }
 
-            select {
-                width: 15%;
-                background-color: transparent;
-                border: none;
-            }
-            button {
-                border: none;
-                @apply flex justify-center items-center bg-primary-2;
-                width: 5%;
-                height: 100%;
-
-                i {
-                    color: white;
-                    font-size: 22px;
+                &:not(:last-child) {
+                    margin-right: 30px;
                 }
-            }
-        }
-    }
-}
-
-nav {
-    @apply flex justify-between items-center;
-    height: 64px;
-    border-bottom: 1px rgba($themeDark, 0.4) solid;
-    background-color: $themeWhite;
-    padding: $generalPadding;
-    width: 100%;
-
-    ul {
-        display: flex;
-        padding: 0;
-        margin: 0;
-
-        li {
-            list-style: none;
-
-            a {
-                text-decoration: none;
-                color: $themeDark;
-                font-size: 16px;
-            }
-
-            &:not(:last-child) {
-                margin-right: 30px;
             }
         }
     }
@@ -377,7 +365,7 @@ footer {
 
         .copyright {
             @apply text-primary-4;
-                    font-size: 20px;
+            font-size: 20px;
         }
     }
 
@@ -400,3 +388,63 @@ footer {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+// COLLECTIONS
+
+main.collections-wrapper{
+    @apply bg-primary-3;
+
+    min-height:70vh;
+    
+
+    header.breadcrumbs{
+        @apply my-5 text-primary-4 text-sm;
+    }
+
+    div.collections{
+        @apply flex justify-between;
+
+        aside.collections-filters{
+
+            .filter-group{
+
+                h3.title{
+
+                }
+
+                .filter-list{
+
+
+                    .filter{
+                        input{
+
+                        }
+
+                        label{
+                            
+                        }
+                    }
+
+                }
+            }
+
+        }
+
+        section.collections-products{
+
+        }
+
+    }
+
+}
+
+// COLLECTIONS end

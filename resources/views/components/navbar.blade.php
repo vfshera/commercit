@@ -1,5 +1,5 @@
 <div class="navbar-wrapper">
-    <header>
+    <header >
        @livewire('special-offer')
   
         <div class="brand-name-search">
@@ -18,25 +18,24 @@
           </form>
         </div>
        
-      </header>
+    </header>
   
       <nav>
-          
           <ul>
               <li>
-                  <a href="#">Home</a>
+                  <a href="{{ route('welcome') }}">Home</a>
               </li>
               <li>
-                  <a href="#">Stationery</a>
+                  <a href="{{ route('collections.featured') }}">Stationery</a>
               </li>
               <li>
-                  <a href="#">IT</a>
+                  <a href="{{ route('collections.featured') }}">IT</a>
               </li>
               <li>
-                  <a href="#">Furniture</a>
+                  <a href="{{ route('collections.featured') }}">Furniture</a>
               </li>
               <li>
-                  <a href="#">About Us</a>
+                  <a href="{{ route('collections.featured') }}">About Us</a>
               </li>
           </ul>
 

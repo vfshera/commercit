@@ -34145,11 +34145,11 @@ body {
   color: rgba(243, 245, 246, var(--tw-text-opacity));
 }
 
-header {
+.navbar-wrapper header {
   background-color: #1e2d7d;
 }
 
-header .reach-us {
+.navbar-wrapper header .reach-us {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34158,11 +34158,11 @@ header .reach-us {
   border-bottom: 1px rgba(243, 245, 246, 0.4) solid;
 }
 
-header .reach-us .contact-info {
+.navbar-wrapper header .reach-us .contact-info {
   color: #f3f5f6;
 }
 
-header .reach-us button {
+.navbar-wrapper header .reach-us button {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34173,7 +34173,7 @@ header .reach-us button {
   padding: calc(42px / 2);
 }
 
-header .brand-name-search {
+.navbar-wrapper header .brand-name-search {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -34182,12 +34182,12 @@ header .brand-name-search {
   width: 100%;
 }
 
-header .brand-name-search span {
+.navbar-wrapper header .brand-name-search span {
   font-size: 20px;
   color: #f3f5f6;
 }
 
-header .brand-name-search form {
+.navbar-wrapper header .brand-name-search form {
   display: flex;
   justify-content: space-between;
   width: 85%;
@@ -34198,24 +34198,25 @@ header .brand-name-search form {
   background-color: rgba(243, 245, 246, var(--tw-bg-opacity));
 }
 
-header .brand-name-search form input {
+.navbar-wrapper header .brand-name-search form input {
   width: 79%;
   background-color: transparent;
   border: none;
   outline: none;
+  padding: 0 10px;
 }
 
-header .brand-name-search form input:focus {
+.navbar-wrapper header .brand-name-search form input:focus {
   outline: none;
 }
 
-header .brand-name-search form select {
+.navbar-wrapper header .brand-name-search form select {
   width: 15%;
   background-color: transparent;
   border: none;
 }
 
-header .brand-name-search form button {
+.navbar-wrapper header .brand-name-search form button {
   border: none;
   display: flex;
   align-items: center;
@@ -34226,39 +34227,40 @@ header .brand-name-search form button {
   height: 100%;
 }
 
-header .brand-name-search form button i {
+.navbar-wrapper header .brand-name-search form button i {
   color: white;
   font-size: 22px;
 }
 
-nav {
+.navbar-wrapper nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  --tw-bg-opacity: 1;
+  background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   height: 64px;
   border-bottom: 1px rgba(103, 114, 121, 0.4) solid;
-  background-color: #f3f5f6;
   padding: 0 50px;
   width: 100%;
 }
 
-nav ul {
+.navbar-wrapper nav ul {
   display: flex;
   padding: 0;
   margin: 0;
 }
 
-nav ul li {
+.navbar-wrapper nav ul li {
   list-style: none;
 }
 
-nav ul li a {
+.navbar-wrapper nav ul li a {
   text-decoration: none;
   color: #677279;
   font-size: 16px;
 }
 
-nav ul li:not(:last-child) {
+.navbar-wrapper nav ul li:not(:last-child) {
   margin-right: 30px;
 }
 
@@ -34516,6 +34518,26 @@ footer .footer-links ul li a {
   --tw-text-opacity: 1;
   color: rgba(103, 114, 121, var(--tw-text-opacity));
   font-size: 16px;
+}
+
+main.collections-wrapper {
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 245, 246, var(--tw-bg-opacity));
+  min-height: 70vh;
+}
+
+main.collections-wrapper header.breadcrumbs {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(103, 114, 121, var(--tw-text-opacity));
+}
+
+main.collections-wrapper div.collections {
+  display: flex;
+  justify-content: space-between;
 }
 
 @media (min-width: 640px){

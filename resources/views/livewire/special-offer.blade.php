@@ -1,12 +1,20 @@
-<div x-data="{ isOpen: false }">
+<div x-data="{ isOpen: true }">
 
-    <div  x-show="isOpen" class="discounts-special-offers">
+    <div  x-show="isOpen" 
+        class="discounts-special-offers"
+        x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0 transform scale-90"
+        x-transition:enter-end="opacity-100 transform scale-100"
+        x-transition:leave="transition ease-in duration-300"
+        x-transition:leave-start="opacity-100 transform scale-100"
+        x-transition:leave-end="opacity-0 transform scale-90"
+        >
         <span @click.prevent="isOpen = false" class="close-btn" id="close-offer-btn"><i class="ti-close"></i></span>
         <h2>Discounts & Special Offers</h2>
         
         <p>Keep in touch with us for special offers and discounts!</p>
-        <form action="">
-            <input type="text" placeholder="Enter Your Email...">
+        <form action="" wire:submit.prevent="addOfferMail">
+            <input wire:model="email" type="text" placeholder="Enter Your Email...">
             
             <button>Subscribe</button>
         </form>

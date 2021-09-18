@@ -6,7 +6,12 @@ use Livewire\Component;
 
 class SpecialOffer extends Component
 {
-    // public $isOpen = false;
+    public $email = "";
+
+    public function addOfferMail(){
+
+        $this->email .= "Sent!";
+    }
 
     public function render()
     {
