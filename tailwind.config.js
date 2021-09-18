@@ -28,4 +28,7 @@ module.exports = {
             require("@tailwindcss/typography"),
         ],
     },
+    variants: {
+        transitionProperty: ['responsive', 'motion-safe', 'motion-reduce']
+      },
 };
