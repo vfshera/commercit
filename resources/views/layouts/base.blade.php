@@ -28,8 +28,11 @@
     </head>
 
     <body>
+        <x-navbar></x-navbar>
+
         @yield('body')
 
+        <x-footer></x-footer>
         @livewireScripts
     </body>
 </html>

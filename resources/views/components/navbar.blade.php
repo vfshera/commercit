@@ -1,29 +1,6 @@
 <div class="navbar-wrapper">
-
-    <div class="discounts-special-offers">
-        <span class="close-btn" id="close-offer-btn"><i class="ti-close"></i></span>
-        <h2>Discounts & Special Offers</h2>
-        
-        <p>Keep in touch with us for special offers and discounts!</p>
-        <form action="">
-            <input type="text" placeholder="Enter Your Email...">
-            
-            <button>Subscribe</button>
-        </form>
-
-    </div>
-
     <header>
-        
-        <div class="reach-us">
-            <div class="contact-info">
-              Contact: support@ecomm.shop -Tel: 0712345678
-            </div>
-  
-            <button id="special-offer-btn">
-                Subscribe For Special Offers
-            </button>
-        </div>
+       @livewire('special-offer')
   
         <div class="brand-name-search">
           <span>E-Comm Store</span>
@@ -31,6 +8,11 @@
               <input type="text" placeholder="Search Items ...">
               <select name="" id="">
                   <option value="">All Categories</option>
+                  <option value="">Printer</option>
+                  <option value="">Copier Files</option>
+                  <option value="">Chairs</option>
+                  <option value="">Toners</option>
+                  <option value="">Pens & Ink</option>
               </select>
               <button><i class="ti-search"></i></button>
           </form>

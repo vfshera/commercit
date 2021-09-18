@@ -66,10 +66,9 @@ body {
 // GLOBALS END
 .discounts-special-offers{
     background-color: $themeWhite;
-    display: none;
     height:40vh;
     width: 100%;
-    @apply flex flex-col justify-center items-center ;
+    @apply  flex flex-col justify-center items-center ;
 
 
     .close-btn{

@@ -1,6 +1,6 @@
-@extends('layouts.app')
+@extends('layouts.base')
 
-@section('content')
+@section('body')
 <section class="showcase scecomm-container" style="background: url('{{ asset('storage/images/showcase.webp')}}') no-repeat  center;">
     <div class="showcase-content">
         <h2>Office & School Stationery, IT & Furniture</h2>
