@@ -4,8 +4,10 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 
-class CollectionFilter extends Component
+class ProductCollection extends Component
 {
+
+    public $products;
 
     public $filterGroups = [
         "type" => ['Hp','Apple','Samsung'],
@@ -13,10 +15,12 @@ class CollectionFilter extends Component
         "color" => ['Red','Green','Blue']
     ];
 
+    public function mount(){
+        $this->products = getProducts();
+    }
 
     public function render()
-    {     
-
-        return view('livewire.collection-filter');
+    {
+        return view('livewire.product-collection')->extends('layouts.base')->section('body');
     }
 }

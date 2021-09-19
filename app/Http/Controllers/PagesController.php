@@ -11,7 +11,9 @@ class PagesController extends Controller
    }
 
    public function featured(){
-       return view('collections');
+       $products = getProducts();
+       
+       return view('collections' , compact('products'));
    }
 
 
