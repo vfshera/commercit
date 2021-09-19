@@ -28,11 +28,7 @@ $brandMinHeight: 84px;
 html,
 body {
     @apply p-0 m-0;
-
-    // padding: 0;
-    // margin: 0;
     box-sizing: border-box;
-
     font-family: "DIN Next", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -237,17 +233,18 @@ section.showcase {
     }
 }
 
-section.featured-products {
+section.products-view {
     @apply mt-16;
 
     .product-list {
-        height: 390px;
+        
         background: white;
         border: 1px rgba($themeDark, 0.4) solid;
 
         @apply w-full rounded-md flex mt-5;
 
         .product {
+            height: 390px;
             @apply w-1/6 p-4 flex flex-col justify-between;
 
             img {
@@ -257,6 +254,7 @@ section.featured-products {
             &-info {
                 height: 40%;
                 @apply pt-5 flex flex-col gap-2;
+
                 h4 {
                     color: $themeDark;
                     text-transform: uppercase;
@@ -278,6 +276,73 @@ section.featured-products {
         }
     }
 }
+
+
+section.filterable.products-view {
+    @apply m-0;
+
+    
+    
+    header.product-actions{
+
+        @apply flex flex-col  justify-between px-7 py-6;
+
+        border-bottom: 1px rgba($themeDark, 0.4) solid;
+        height: 120px;
+
+        h3{
+           @apply text-2xl text-primary-1 font-semibold;
+        }
+
+        .sorting{
+            @apply flex justify-between;
+        }
+    }
+
+    .product-list {
+       
+        background: white;
+        border: none !important;
+
+        @apply w-full rounded-md flex  flex-wrap m-0;
+
+        .product {
+            height: 390px;
+            @apply w-1/2 lg:w-1/3 xl:w-1/4 p-4 flex flex-col justify-between ;
+            border-bottom: 1px rgba($themeDark, 0.4) solid;
+
+            img {
+                max-height: 60%;
+            }
+
+            &-info {
+                height: 40%;
+                @apply pt-5 flex flex-col gap-2;
+
+                h4 {
+                    color: $themeDark;
+                    text-transform: uppercase;
+                    @apply text-sm;
+                }
+
+                h3 {
+                    @apply text-primary-1 text-base font-semibold;
+                }
+
+                p {
+                    @apply text-primary-2 text-xl;
+                }
+            }
+
+            &:not(:first-child) {
+                border-left: 1px rgba($themeDark, 0.4) solid;
+            }
+        }
+    }
+}
+
+
+
 
 section.shop-by-category {
     @apply mt-16;
@@ -403,7 +468,7 @@ footer {
 main.collections-wrapper{
     @apply bg-primary-3;
 
-    min-height:70vh;
+    // min-height:70vh;
     
 
     header.breadcrumbs{
@@ -415,6 +480,8 @@ main.collections-wrapper{
 
         aside.collections-filters{
             @apply bg-white p-5 w-1/5 rounded-md;
+            min-height: 100px;
+            border: 1px rgba($themeDark, 0.4) solid;
 
             h1{
                 @apply text-primary-1 text-2xl font-semibold;
@@ -448,7 +515,9 @@ main.collections-wrapper{
         }
 
         section.collections-products{
-            @apply bg-white w-4/5 p-5 rounded-md;
+             border: 1px rgba($themeDark, 0.4) solid;
+
+            @apply bg-white w-4/5 rounded-md h-auto;
 
         }
 

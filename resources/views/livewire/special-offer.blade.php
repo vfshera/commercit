@@ -1,4 +1,4 @@
-<div x-data="{ isOpen: true }">
+<div x-data="{ isOpen: false }">
 
     <div  x-show="isOpen" 
         class="discounts-special-offers"

@@ -11,7 +11,7 @@
 </section>
 
 
-<section class="featured-products scecomm-container">
+<section class="featured products-view scecomm-container">
 
     <div class="title-action">
         <h3>Featured Products</h3>
