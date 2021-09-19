@@ -295,7 +295,53 @@ section.filterable.products-view {
         }
 
         .sorting{
-            @apply flex justify-between;
+            @apply flex justify-between items-center;
+
+            .products-shown{
+                @apply text-primary-4;
+            }
+
+            .per-page-group{
+                @apply text-primary-4;
+
+                label.per-page-select{
+
+                }
+
+                select.per-page-select{
+                    @apply border-0  text-primary-4 text-center h-10 px-2 bg-white  focus:outline-none appearance-none;
+
+                
+                }
+
+            }
+
+            .sort-group{
+                @apply text-primary-4;
+
+                label.sort-by-select{
+
+                }
+
+                select.sort-by-select{
+                    @apply border-0  text-primary-4 text-center h-10 px-2 bg-white focus:outline-none appearance-none;
+
+                }
+            }
+
+            .product-view-style{
+                @apply text-primary-4;
+
+                i{
+                    @apply ml-3;
+
+                    &.active{
+                        @apply text-primary-1;
+                    }
+                }
+
+            }
+
         }
     }
 
@@ -308,7 +354,7 @@ section.filterable.products-view {
 
         .product {
             height: 390px;
-            @apply w-1/2 lg:w-1/3 xl:w-1/4 p-4 flex flex-col justify-between ;
+            @apply w-1/2 lg:w-1/3 xl:w-1/4 p-4 flex flex-col justify-between cursor-pointer ;
             border-bottom: 1px rgba($themeDark, 0.4) solid;
 
             img {
@@ -479,7 +525,7 @@ main.collections-wrapper{
         @apply flex justify-between gap-10;
 
         aside.collections-filters{
-            @apply bg-white p-5 w-1/5 rounded-md;
+            @apply bg-white p-5 w-3/12 lg:w-1/5 rounded-md;
             min-height: 100px;
             border: 1px rgba($themeDark, 0.4) solid;
 
@@ -517,7 +563,7 @@ main.collections-wrapper{
         section.collections-products{
              border: 1px rgba($themeDark, 0.4) solid;
 
-            @apply bg-white w-4/5 rounded-md h-auto;
+            @apply bg-white w-9/12 lg:w-4/5 rounded-md h-auto;
 
         }
 

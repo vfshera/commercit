@@ -23,27 +23,29 @@
         <h3>Featured Products</h3>
 
         <div class="sorting">
-            <span>Sowing 1-10 of 20 Products</span>
+            <span class="products-shown">Showing 1-10 of 20 Products</span>
            
             <div class="per-page-group">
 
-                <label for="per-page-select">Display : </label>
+                <label for="per-page-select">Display: </label>
                 <select name="per-page-select" class="per-page-select" defaultValue="10">
-                    <option value="10">10 per Page</option>
-                    <option value="20">20 per Page</option>
+                    <option value="10">10 per page</option>
+                    <option value="20">20 per page</option>
                 </select>
             </div>
             
             <div class="sort-group">
-                <label for="sort-by-select">Sort By : </label>
+                <label for="sort-by-select">Sort By: </label>
                 <select name="sort-by-select" class="sort-by-select" defaultValue="brand-a-z">
                     <option value="brand-a-z">Brand [A-Z]</option>
                     <option value="title-a-z">Title [A-Z]</option>
                 </select>
             </div>
 
-            <div class="product-view-style">
-                View
+            <div class="product-view-style" x-data="{ layout: 1}">
+                View 
+                <i class="ti-layout-grid3-alt" @click.prevent="layout = 1" :class=" layout == 1 && 'active'" ></i> 
+                <i class="ti-menu-alt" @click.prevent="layout = 2"  :class=" layout == 2 && 'active' "></i>
             </div>
         </div>
 
