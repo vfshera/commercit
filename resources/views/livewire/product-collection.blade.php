@@ -89,9 +89,9 @@
         @foreach($products as $product)
         
             <div class="product">
-                <img src="{{ $product->image }}" alt="USB Wired Keyboard HP">
+                <img src="{{ $photos[rand(0,5)] }}" alt="{{ $product->title." Image" }}">
                 <div class="product-info">
-                    <h4>{{ $product->brand }}</h4>
+                    <h4>{{ $product->brand->name }}</h4>
                     <h3>{{ $product->title }}</h3>
                     <p>Ksh.{{ $product->price }}</p>
                 </div>

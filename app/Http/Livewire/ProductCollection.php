@@ -3,11 +3,13 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use App\Models\Product;
 
 class ProductCollection extends Component
 {
 
     public $products;
+    public $photos;
 
     public $filterGroups = [
         "type" => ['Hp','Apple','Samsung'],
@@ -16,7 +18,8 @@ class ProductCollection extends Component
     ];
 
     public function mount(){
-        $this->products = getProducts();
+        $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
+        $this->photos = getPhotos();
     }
 
     public function render()
