@@ -11423,6 +11423,60 @@ video {
   }
 }
 
+@-webkit-keyframes wiggle{
+  0%, 100%{
+    transform: rotate(-3deg);
+  }
+
+  50%{
+    transform: rotate(3deg);
+  }
+}
+
+@keyframes wiggle{
+  0%, 100%{
+    transform: rotate(-3deg);
+  }
+
+  50%{
+    transform: rotate(3deg);
+  }
+}
+
+@-webkit-keyframes cart{
+  0%{
+    transform: translateX(-600%);
+    opacity: 0;
+  }
+
+  5%{
+    transform: translateX(-450%);
+    opacity: 0.5;
+  }
+
+  25%{
+    transform: translateX(30%);
+    opacity: 1;
+  }
+}
+
+@keyframes cart{
+  0%{
+    transform: translateX(-600%);
+    opacity: 0;
+  }
+
+  5%{
+    transform: translateX(-450%);
+    opacity: 0.5;
+  }
+
+  25%{
+    transform: translateX(30%);
+    opacity: 1;
+  }
+}
+
 .animate-none{
   -webkit-animation: none;
           animation: none;
@@ -11446,6 +11500,86 @@ video {
 .animate-bounce{
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
+}
+
+.animate-wiggle{
+  -webkit-animation: wiggle 1s ease-in-out infinite;
+          animation: wiggle 1s ease-in-out infinite;
+}
+
+.animate-cart{
+  -webkit-animation: cart 5s ease-in-out infinite;
+          animation: cart 5s ease-in-out infinite;
+}
+
+.hover\:animate-none:hover{
+  -webkit-animation: none;
+          animation: none;
+}
+
+.hover\:animate-spin:hover{
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+.hover\:animate-ping:hover{
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.hover\:animate-pulse:hover{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.hover\:animate-bounce:hover{
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
+.hover\:animate-wiggle:hover{
+  -webkit-animation: wiggle 1s ease-in-out infinite;
+          animation: wiggle 1s ease-in-out infinite;
+}
+
+.hover\:animate-cart:hover{
+  -webkit-animation: cart 5s ease-in-out infinite;
+          animation: cart 5s ease-in-out infinite;
+}
+
+.focus\:animate-none:focus{
+  -webkit-animation: none;
+          animation: none;
+}
+
+.focus\:animate-spin:focus{
+  -webkit-animation: spin 1s linear infinite;
+          animation: spin 1s linear infinite;
+}
+
+.focus\:animate-ping:focus{
+  -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+          animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.focus\:animate-pulse:focus{
+  -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.focus\:animate-bounce:focus{
+  -webkit-animation: bounce 1s infinite;
+          animation: bounce 1s infinite;
+}
+
+.focus\:animate-wiggle:focus{
+  -webkit-animation: wiggle 1s ease-in-out infinite;
+          animation: wiggle 1s ease-in-out infinite;
+}
+
+.focus\:animate-cart:focus{
+  -webkit-animation: cart 5s ease-in-out infinite;
+          animation: cart 5s ease-in-out infinite;
 }
 
 .cursor-auto{
@@ -34968,6 +35102,10 @@ section.product-view .detail-snaps aside.product-details .price-purchase .quanti
 }
 
 section.product-view .detail-snaps aside.product-details .price-purchase button {
+  display: flex;
+  width: 33.333333%;
+  align-items: center;
+  justify-content: center;
   border-radius: 0.5rem;
   --tw-bg-opacity: 1;
   background-color: rgba(30, 45, 125, var(--tw-bg-opacity));
@@ -34975,9 +35113,21 @@ section.product-view .detail-snaps aside.product-details .price-purchase button 
   padding-right: 2rem;
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+  text-align: center;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgba(255, 255, 255, var(--tw-text-opacity));
+}
+
+section.product-view .detail-snaps aside.product-details .price-purchase button span .cart-icon {
+  margin-left: 0.25rem;
+}
+
+section.product-view .detail-snaps aside.product-details .price-purchase button:hover span .cart-icon {
+  margin-left: 0.25rem;
+  -webkit-animation: cart 5s ease-in-out infinite;
+          animation: cart 5s ease-in-out infinite;
+  opacity: 0;
 }
 
 section.product-view .detail-snaps .snapshots {
@@ -44350,31 +44500,6 @@ section.product-view .detail-snaps .snapshots img{
 
   .sm\:focus\:scale-y-150:focus{
     --tw-scale-y: 1.5;
-  }
-
-  .sm\:animate-none{
-    -webkit-animation: none;
-            animation: none;
-  }
-
-  .sm\:animate-spin{
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-
-  .sm\:animate-ping{
-    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .sm\:animate-pulse{
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .sm\:animate-bounce{
-    -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
   }
 
   .sm\:cursor-auto{
@@ -76371,31 +76496,6 @@ section.product-view .detail-snaps .snapshots img{
     --tw-scale-y: 1.5;
   }
 
-  .md\:animate-none{
-    -webkit-animation: none;
-            animation: none;
-  }
-
-  .md\:animate-spin{
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-
-  .md\:animate-ping{
-    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .md\:animate-pulse{
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .md\:animate-bounce{
-    -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
-  }
-
   .md\:cursor-auto{
     cursor: auto;
   }
@@ -108388,31 +108488,6 @@ section.product-view .detail-snaps .snapshots img{
 
   .lg\:focus\:scale-y-150:focus{
     --tw-scale-y: 1.5;
-  }
-
-  .lg\:animate-none{
-    -webkit-animation: none;
-            animation: none;
-  }
-
-  .lg\:animate-spin{
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-
-  .lg\:animate-ping{
-    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .lg\:animate-pulse{
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .lg\:animate-bounce{
-    -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
   }
 
   .lg\:cursor-auto{
@@ -140409,31 +140484,6 @@ section.product-view .detail-snaps .snapshots img{
     --tw-scale-y: 1.5;
   }
 
-  .xl\:animate-none{
-    -webkit-animation: none;
-            animation: none;
-  }
-
-  .xl\:animate-spin{
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-
-  .xl\:animate-ping{
-    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .xl\:animate-pulse{
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .xl\:animate-bounce{
-    -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
-  }
-
   .xl\:cursor-auto{
     cursor: auto;
   }
@@ -172426,31 +172476,6 @@ section.product-view .detail-snaps .snapshots img{
 
   .\32xl\:focus\:scale-y-150:focus{
     --tw-scale-y: 1.5;
-  }
-
-  .\32xl\:animate-none{
-    -webkit-animation: none;
-            animation: none;
-  }
-
-  .\32xl\:animate-spin{
-    -webkit-animation: spin 1s linear infinite;
-            animation: spin 1s linear infinite;
-  }
-
-  .\32xl\:animate-ping{
-    -webkit-animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-            animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
-  }
-
-  .\32xl\:animate-pulse{
-    -webkit-animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  }
-
-  .\32xl\:animate-bounce{
-    -webkit-animation: bounce 1s infinite;
-            animation: bounce 1s infinite;
   }
 
   .\32xl\:cursor-auto{

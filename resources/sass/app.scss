@@ -606,7 +606,26 @@ section.product-view {
                 }
     
                 button{
-                    @apply text-white bg-primary-1 rounded-lg px-8 py-3 font-semibold;    
+                    @apply text-white bg-primary-1 text-center w-2/6 rounded-lg flex justify-center items-center px-8 py-3 font-semibold; 
+
+                    span{                       
+                       
+                        .cart-icon{
+                            @apply ml-1  ;
+                        }  
+                    }
+
+                    &:hover{
+                        span{                       
+                       
+                            .cart-icon{
+                                @apply ml-1 opacity-0 animate-cart;
+                            }  
+                        }
+                    }
+                  
+
+                 
                 }
             }
         }
