@@ -29,6 +29,8 @@ class DatabaseSeeder extends Seeder
            ProductSeeder::class,
            TagSeeder::class,
            ProductTagSeeder::class,
+           CategorySeeder::class,
+           ProductCategorySeeder::class,
        ]);
 
 

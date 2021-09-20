@@ -23,6 +23,10 @@ class Product extends Model
         return $this->hasMany(ProductTag::class);
     }
 
+    public function productCategories(){
+        return $this->hasMany(ProductCategory::class);
+    }
+
     public function brand(){
         return $this->belongsTo(Brand::class);
     }

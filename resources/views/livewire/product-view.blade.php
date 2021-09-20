@@ -34,7 +34,7 @@
     
                     <div class="price">
                        <label >Price: </label> 
-                       <span>{{ number_format( $product->price , 0, '.', ',') }}</span>
+                       <span>Ksh.{{ number_format( $product->price , 0, '.', ',') }}</span>
                     </div>
     
                     <div class="quantity">
