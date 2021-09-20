@@ -104,6 +104,12 @@ body {
     }
 }
 
+header.breadcrumbs {
+    @apply my-5 text-primary-4 text-sm;
+}
+
+// end globals
+
 // NAVBAR
 .navbar-wrapper {
     header {
@@ -237,7 +243,6 @@ section.products-view {
     @apply mt-16;
 
     .product-list {
-        
         background: white;
         border: 1px rgba($themeDark, 0.4) solid;
 
@@ -277,76 +282,63 @@ section.products-view {
     }
 }
 
-
 section.filterable.products-view {
     @apply m-0;
 
-    
-    
-    header.product-actions{
-
+    header.product-actions {
         @apply flex flex-col  justify-between px-7 py-6;
 
         border-bottom: 1px rgba($themeDark, 0.4) solid;
         height: 120px;
 
-        h3{
-           @apply text-2xl text-primary-1 font-semibold;
+        h3 {
+            @apply text-2xl text-primary-1 font-semibold;
         }
 
-        .sorting{
+        .sorting {
             @apply flex justify-between items-center;
 
-            .products-shown{
+            .products-shown {
                 @apply text-primary-4;
             }
 
-            .per-page-group{
+            .per-page-group {
                 @apply text-primary-4;
 
-                label.per-page-select{
-
+                label.per-page-select {
                 }
 
-                select.per-page-select{
+                select.per-page-select {
                     @apply border-0  text-primary-4 text-center h-10 px-2 bg-white  focus:outline-none appearance-none;
-
-                
                 }
-
             }
 
-            .sort-group{
+            .sort-group {
                 @apply text-primary-4;
 
-                label.sort-by-select{
-
+                label.sort-by-select {
                 }
 
-                select.sort-by-select{
+                select.sort-by-select {
                     @apply border-0  text-primary-4 text-center h-10 px-2 bg-white focus:outline-none appearance-none;
-
                 }
             }
 
-            .product-view-style{
+            .product-view-style {
                 @apply text-primary-4;
 
-                i{
+                i {
                     @apply ml-3;
 
-                    &.active{
+                    &.active {
                         @apply text-primary-1;
                     }
                 }
-
             }
-
         }
     }
 
     .product-list {
-       
         background: white;
         border: none !important;
 
@@ -354,7 +346,7 @@ section.filterable.products-view {
 
         .product {
             height: 390px;
-            @apply w-1/2 lg:w-1/3 xl:w-1/4 p-4 flex flex-col justify-between cursor-pointer ;
+            @apply w-1/2 lg:w-1/3 xl:w-1/4 p-4 flex flex-col justify-between cursor-pointer;
             border-bottom: 1px rgba($themeDark, 0.4) solid;
 
             img {
@@ -386,9 +378,6 @@ section.filterable.products-view {
         }
     }
 }
-
-
-
 
 section.shop-by-category {
     @apply mt-16;
@@ -500,75 +489,136 @@ footer {
     }
 }
 
-
-
-
-
-
-
-
-
-
 // COLLECTIONS
 
-main.collections-wrapper{
+main.collections-wrapper {
     @apply bg-primary-3;
 
     // min-height:70vh;
-    
 
-    header.breadcrumbs{
-        @apply my-5 text-primary-4 text-sm;
-    }
-
-    div.collections{
+    div.collections {
         @apply flex justify-between gap-10;
 
-        aside.collections-filters{
+        aside.collections-filters {
             @apply bg-white p-5 w-3/12 lg:w-1/5 rounded-md;
             min-height: 100px;
             border: 1px rgba($themeDark, 0.4) solid;
 
-            h1{
+            h1 {
                 @apply text-primary-1 text-2xl font-semibold;
             }
 
-            .filter-group{
-
+            .filter-group {
                 @apply my-6;
 
-                h3.title{
-                    @apply text-primary-1 text-base font-semibold; 
+                h3.title {
+                    @apply text-primary-1 text-base font-semibold;
                 }
 
-                .filter-list{
+                .filter-list {
                     @apply my-2;
 
-                    .filter{
-
-                        input{
-
+                    .filter {
+                        input {
                         }
 
-                        label{
-
+                        label {
                         }
                     }
-
                 }
             }
-
         }
 
-        section.collections-products{
-             border: 1px rgba($themeDark, 0.4) solid;
+        section.collections-products {
+            border: 1px rgba($themeDark, 0.4) solid;
 
             @apply bg-white w-9/12 lg:w-4/5 rounded-md h-auto;
-
         }
-
     }
-
 }
 
 // COLLECTIONS end
+
+// PRODUCT VIEW
+
+section.product-view {
+    @apply flex justify-between gap-8;
+    max-height: 70vh;
+
+    .product-images {
+        @apply w-6/12 bg-white flex justify-center rounded-md;
+             border: 1px rgba($themeDark, 0.4) solid;       
+
+        img {
+            @apply p-5 w-full object-contain;
+        }
+    }
+
+    .detail-snaps{
+        @apply w-6/12;
+
+        aside.product-details {
+            @apply  p-8  bg-white rounded-md;
+            border: 1px rgba($themeDark, 0.4) solid;
+            max-height: 30vh;
+    
+            .info {
+                border-bottom: 1px rgba($themeDark, 0.4) solid;
+    
+                h1 {
+                    @apply text-primary-1 text-3xl font-semibold;
+                }
+    
+                .share-brand {
+                    @apply flex justify-between my-4;
+    
+                    .brand {
+                        @apply uppercase text-primary-4;
+                    }
+    
+                    .share {
+                        @apply text-primary-4 hover:text-primary-1;
+                    }
+                }
+            }
+    
+            .price-purchase {
+                @apply py-4 flex justify-between items-center;
+    
+                .price{
+                    label{
+                        @apply text-primary-1 font-semibold;
+                    }
+    
+                    span{
+                        @apply text-primary-2 text-xl font-semibold;
+                    }
+                }
+    
+                .quantity {
+                    label{
+                        @apply text-primary-1 font-semibold;
+                    }
+    
+                    select{
+                        @apply text-primary-1 font-semibold;
+                    }
+                }
+    
+                button{
+                    @apply text-white bg-primary-1 rounded-lg px-8 py-3 font-semibold;    
+                }
+            }
+        }
+
+        .snapshots {
+            @apply w-full p-2 mt-5 flex flex-row flex-wrap gap-1;
+
+            img {
+                @apply h-20  p-1 bg-primary-3 hover:bg-primary-2;
+            }
+        }
+    }
+}
+
+// PRODUCT VIEW end

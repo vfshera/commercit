@@ -1,7 +1,10 @@
 <?php
 
 use App\Http\Controllers\PagesController;
-use App\Http\Livewire\ProductCollection;
+use App\Http\Livewire\{
+    ProductCollection,
+    ProductView
+};
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,11 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [PagesController::class,'index'])->name('welcome');
-Route::get('/products', function(){
-    // $products = \App\Models\Product::with('productTags','brand')->get();
 
-    return getProducts();
-});
 
 
 
@@ -28,6 +27,8 @@ Route::get('/products', function(){
 Route::prefix('/collections')->name('collections.')->group(function () {
 
     Route::get('/featured', ProductCollection::class)->name('featured');
+
+    Route::get('/product-view/{product}-{productSlug}', ProductView::class)->name('product-view');
 
 });
 

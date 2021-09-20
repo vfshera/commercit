@@ -22,6 +22,14 @@ class ProductCollection extends Component
         $this->photos = getPhotos();
     }
 
+
+    public function viewProduct(Product $product){ 
+
+        return redirect()->route('collections.product-view',['product' => $product,'productSlug' => $product->slug]);
+
+    }
+
+
     public function render()
     {
         return view('livewire.product-collection')->extends('layouts.base')->section('body');

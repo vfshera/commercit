@@ -88,7 +88,7 @@
 
         @foreach($products as $product)
         
-            <div class="product">
+            <div class="product" wire:click="viewProduct({{ $product }})">
                 <img src="{{ $photos[rand(0,5)] }}" alt="{{ $product->title." Image" }}">
                 <div class="product-info">
                     <h4>{{ $product->brand->name }}</h4>
@@ -96,6 +96,7 @@
                     <p>Ksh.{{ $product->price }}</p>
                 </div>
             </div>
+            
         @endforeach
 
 
