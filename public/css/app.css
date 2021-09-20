@@ -35029,7 +35029,6 @@ section.product-view .detail-snaps aside.product-details {
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity));
   padding: 2rem;
   border: 1px rgba(103, 114, 121, 0.4) solid;
-  max-height: 30vh;
 }
 
 section.product-view .detail-snaps aside.product-details .info {
@@ -35042,6 +35041,24 @@ section.product-view .detail-snaps aside.product-details .info h1 {
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgba(30, 45, 125, var(--tw-text-opacity));
+}
+
+section.product-view .detail-snaps aside.product-details .info .product-tags {
+  margin-top: 0.5rem;
+}
+
+section.product-view .detail-snaps aside.product-details .info .product-tags .tag {
+  border-radius: 0.125rem;
+  --tw-bg-opacity: 1;
+  background-color: rgba(243, 245, 246, var(--tw-bg-opacity));
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  --tw-text-opacity: 1;
+  color: rgba(75, 85, 99, var(--tw-text-opacity));
 }
 
 section.product-view .detail-snaps aside.product-details .info .share-brand {

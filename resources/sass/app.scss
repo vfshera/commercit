@@ -560,7 +560,7 @@ section.product-view {
         aside.product-details {
             @apply  p-8  bg-white rounded-md;
             border: 1px rgba($themeDark, 0.4) solid;
-            max-height: 30vh;
+            // max-height: 30vh;
     
             .info {
                 border-bottom: 1px rgba($themeDark, 0.4) solid;
@@ -569,6 +569,15 @@ section.product-view {
                     @apply text-primary-1 text-3xl font-semibold;
                 }
     
+                .product-tags{
+                    @apply mt-2;
+
+                    .tag{
+                        @apply px-2 py-1 bg-primary-3 text-sm rounded-sm text-gray-600;
+                    }
+                }
+
+
                 .share-brand {
                     @apply flex justify-between my-4;
     

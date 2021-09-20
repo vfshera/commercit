@@ -14,6 +14,6 @@ class ProductTag extends Model
     }
 
     public function tag(){
-         return $this->hasOne(Tag::class);
+         return $this->hasOne(Tag::class , 'id');
    }
 }

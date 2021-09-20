@@ -2,7 +2,7 @@
 
 <div>
     <header class="breadcrumbs scecomm-container">
-        Home > Collections > Product View > {{ $product->title }}
+        Home > Collections > Product View > {{ ucwords( $product->title ) }}
     </header>
     
     <section class="product-view scecomm-container" x-data="{displayPhoto: @entangle('displayPhoto')}">
@@ -18,6 +18,12 @@
 
                 <div class="info">
                     <h1>{{ $product->title }}</h1>
+
+                    <div class="product-tags">             
+                        @foreach($product->productTags as $productTag)
+                            <span class="tag">{{  "#".strtolower($productTag->tag->name) }}</span>
+                        @endforeach
+                    </div>
     
                     <div class="share-brand">
                         <div class="brand">
@@ -28,6 +34,9 @@
                             <i class="ti-share"></i>
                         </div>
                     </div>
+
+                   
+
                 </div>
     
                 <div class="price-purchase">

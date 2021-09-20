@@ -12,7 +12,7 @@ class Tag extends Model
     protected $fillable = ['name'];
 
     public function productTags(){
-        return $this->hasMany(ProductTag::class);
+        return $this->hasMany(ProductTag::class , 'tag_id' , 'id');
     }
 
 
