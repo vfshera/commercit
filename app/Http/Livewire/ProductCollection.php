@@ -2,14 +2,25 @@
 
 namespace App\Http\Livewire;
 
+use Illuminate\Http\Request;
 use Livewire\Component;
 use App\Models\Product;
+use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductCollection extends Component
 {
 
+    public $sort;
+    public $sortVal;
+    public $sortMode = "DESC";
+
     public $products;
     public $photos;
+
+
+    protected $queryString = ['sort'];
+    
+    public $currPath;
 
     public $filterGroups = [
         "type" => ['Hp','Apple','Samsung'],
@@ -17,8 +28,39 @@ class ProductCollection extends Component
         "color" => ['Red','Green','Blue']
     ];
 
+
+
+
+    public function setFilter(){
+       
+
+        if($this->sortMode === "DESC"){
+
+            $this->sort = "-".$this->sortVal;
+            
+        }
+
+        if($this->sortMode === "ASC"){
+
+            $this->sort =  $this->sortVal;
+
+        }
+
+
+    }
+
+    public function updated(){
+        $this->setFilter();
+
+    }
+
+
     public function mount(){
-        $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
+
+
+
+        $this->products = QueryBuilder::for(Product::class)->defaultSort('title')->allowedSorts(['title' , 'price'])->get();
+        // $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
         $this->photos = getPhotos();
     }
 

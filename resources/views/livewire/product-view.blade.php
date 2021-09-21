@@ -17,7 +17,7 @@
             <aside class="product-details">
 
                 <div class="info">
-                    <h1>{{ $product->title }}</h1>
+                    <h1>{{ ucwords($product->title) }}</h1>
 
                     <div class="product-tags">             
                         @foreach($product->productTags as $productTag)

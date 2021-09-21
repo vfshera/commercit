@@ -1,7 +1,7 @@
 <main class="collections-wrapper">
 
     <header class="breadcrumbs scecomm-container">
-        Home > Collections
+        Home > Collections 
     </header>
 
     <div class="collections scecomm-container">
@@ -65,11 +65,16 @@
                 </select>
             </div>
             
-            <div class="sort-group">
+            <div class="sort-group" >
                 <label for="sort-by-select">Sort By: </label>
-                <select name="sort-by-select" class="sort-by-select" defaultValue="brand-a-z">
-                    <option value="brand-a-z">Brand [A-Z]</option>
-                    <option value="title-a-z">Title [A-Z]</option>
+                <select wire:model="sortVal" name="sort-by-select" class="sort-by-select" defaultValue="title">
+                    <option value="brand">Brand</option>
+                    <option value="title">Title</option>
+                    <option value="price">Price</option>
+                </select>
+                <select wire:model="sortMode" name="sort-by-select" class="sort-by-select" defaultValue="DESC">
+                    <option value="DESC">DESC</option>
+                    <option value="ASC" >ASC</option>
                 </select>
             </div>
 
