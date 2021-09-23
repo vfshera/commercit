@@ -2,21 +2,7 @@
     <header >
        @livewire('special-offer')
   
-        <div class="brand-name-search">
-          <span>E-Comm Store</span>
-          <form action="">
-              <input type="text" placeholder="Search Items ...">
-              <select name="" id="">
-                  <option value="">All Categories</option>
-                  <option value="">Printer</option>
-                  <option value="">Copier Files</option>
-                  <option value="">Chairs</option>
-                  <option value="">Toners</option>
-                  <option value="">Pens & Ink</option>
-              </select>
-              <button><i class="ti-search"></i></button>
-          </form>
-        </div>
+        @livewire('search-box')
        
     </header>
   

@@ -47,7 +47,7 @@
     
         <section class="collections-products">
             
-<section class="filterable products-view ">
+<section class="filterable products-view "  x-data="{ layout: 1}"  :class="layout == 2 && 'listed' ">
 
     <header class="product-actions">
 
@@ -68,7 +68,6 @@
             <div class="sort-group" >
                 <label for="sort-by-select">Sort By: </label>
                 <select wire:model="sortVal" name="sort-by-select" class="sort-by-select" defaultValue="title">
-                    <option value="brand">Brand</option>
                     <option value="title">Title</option>
                     <option value="price">Price</option>
                 </select>
@@ -78,7 +77,7 @@
                 </select>
             </div>
 
-            <div class="product-view-style" x-data="{ layout: 1}">
+            <div class="product-view-style">
                 View 
                 <i class="ti-layout-grid3-alt" @click.prevent="layout = 1" :class=" layout == 1 && 'active'" ></i> 
                 <i class="ti-menu-alt" @click.prevent="layout = 2"  :class=" layout == 2 && 'active' "></i>

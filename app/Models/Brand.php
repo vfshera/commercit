@@ -12,6 +12,11 @@ class Brand extends Model
     protected $fillable = ['name'];
 
 
+
+    public function scopeActive($query){
+        return $query->with('products');
+    }
+
     public function products(){
         return $this->hasMany(Product::class);
     }

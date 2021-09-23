@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Brand;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Livewire\Component;
 use App\Models\Product;
@@ -19,11 +21,11 @@ class ProductCollection extends Component
 
 
     protected $queryString = ['sort'];
-    
+
     public $currPath;
 
     public $filterGroups = [
-        "type" => ['Hp','Apple','Samsung'],
+        "brands" => [],
         "size" => ['5+','6+','Mini'],
         "color" => ['Red','Green','Blue']
     ];
@@ -56,8 +58,7 @@ class ProductCollection extends Component
 
 
     public function mount(){
-
-
+        $this->filterGroups['brands'] = Brand::active()->pluck('name');
 
         $this->products = QueryBuilder::for(Product::class)->defaultSort('title')->allowedSorts(['title' , 'price'])->get();
         // $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
