@@ -34506,13 +34506,17 @@ header.breadcrumbs {
 }
 
 .navbar-wrapper header .brand-name-search form .search-results-wrapper .search-results p{
-  min-width: 300px;
+  min-width: 400px;
 }
 
 .navbar-wrapper header .brand-name-search form .search-results-wrapper .search-results p:not(:first-child) {
   border-top-width: 1px;
   --tw-border-opacity: 1;
   border-color: rgba(243, 245, 246, var(--tw-border-opacity));
+}
+
+.navbar-wrapper header .brand-name-search form .search-results-wrapper .search-results p a {
+  width: 100%;
 }
 
 .navbar-wrapper nav {

@@ -16,7 +16,9 @@
             <div class="search-results"  >
                                 
                 @foreach($searchedProducts as $product)
-                    <p>{{ $product->title }}</p>
+                    <p>
+                        <a href="{{ route('collections.product-view',['product' => $product->id,'productSlug' => $product->slug]) }}">{{ $product->title }}</a>
+                    </p>
                 @endforeach
                 
                 

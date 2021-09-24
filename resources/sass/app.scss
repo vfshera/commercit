@@ -215,12 +215,16 @@ header.breadcrumbs {
                     p{
                         @apply p-1 hover:text-primary-2 cursor-pointer;
 
-                        min-width:300px;                      
+                        min-width:400px;                      
 
                         &:not(:first-child){
 
                             @apply border-t  border-primary-3;
 
+                        }
+
+                        a{
+                            @apply w-full;
                         }
                     }
                     
