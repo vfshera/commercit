@@ -9,7 +9,7 @@ use App\Models\Product;
 class SearchBox extends Component
 {
     public $search = "";
-    public $hasSearched = true;
+    public $hasSearched = false;
 
     public $category = "";
 
@@ -27,14 +27,24 @@ class SearchBox extends Component
 
     public function updated(){
 
-        $this->searchedProducts = Product::when($this->category , function($query, $category_id){
-            return $query->where('brand_id', $category_id);
-        })->when($this->search , function($query, $search){
-            return $query->where('title', "LIKE" , "%$search%");
-        })->get();
+        if(!empty($this->category) || !empty($this->search)){
+
+            $this->searchedProducts = Product::when($this->category , function($query, $category_id){
+                return $query->where('brand_id', $category_id);
+            })->when($this->search , function($query, $search){
+                return $query->where('title', "LIKE" , "%$search%");
+            })->get();
+
+        }else{
+            
+            $this->searchedProducts = [];
+
+        }
 
         if(count($this->searchedProducts) > 0){
             $this->hasSearched = true;
+        }else{
+            $this->hasSearched = false;
         }
     }
 

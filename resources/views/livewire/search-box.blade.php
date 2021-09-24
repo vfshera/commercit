@@ -12,11 +12,9 @@
             @endforeach
 
         </select>
-        <div class="search-results-wrapper" >
+        <div class="search-results-wrapper" x-data="{ res: @entangle('hasSearched')} " x-show="res">
             <div class="search-results"  >
-                
-
-                
+                                
                 @foreach($searchedProducts as $product)
                     <p>{{ $product->title }}</p>
                 @endforeach
