@@ -40,6 +40,7 @@ class ProductCollection extends Component
 
             $this->sort = "-".$this->sortVal;
             
+            
         }
 
         if($this->sortMode === "ASC"){
@@ -48,6 +49,8 @@ class ProductCollection extends Component
 
         }
 
+
+        redirect("/collections/featured/?sort=$this->sort");
 
     }
 
