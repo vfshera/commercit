@@ -7,10 +7,17 @@
     
     <section class="product-view scecomm-container" x-data="{displayPhoto: @entangle('displayPhoto')}">
         
-        <div class="product-images">
-           
+        <div class="img-desc">
+            <div class="product-image">           
     
-            <img src="{{ $displayPhoto}}" alt="Product Image">
+                <img src="{{ $displayPhoto}}" alt="Product Image">
+                
+            </div>
+    
+            <div class="product-description">
+                <h2>Product Description :</h2>
+                <p> {{ $product->description }} </p>
+            </div>
         </div>
     
         <div class="detail-snaps">
@@ -19,10 +26,18 @@
                 <div class="info">
                     <h1>{{ ucwords($product->title) }}</h1>
 
-                    <div class="product-tags">             
-                        @foreach($product->productTags as $productTag)
-                            <span class="tag">{{  "#".strtolower($productTag->tag->name) }}</span>
-                        @endforeach
+                    <div class="category-tags">
+                        <div class="product-categories">
+                            @foreach($product->productCategories as $productCategory)
+                                <span class="category">{{  strtolower($productCategory->category->name) }}</span>
+                            @endforeach
+                        </div>
+                        <div class="product-tags">             
+                            
+                            @foreach($product->productTags as $productTag)
+                                <span class="tag">{{  "#".strtolower($productTag->tag->name) }}</span>
+                            @endforeach
+                        </div>
                     </div>
     
                     <div class="share-brand">

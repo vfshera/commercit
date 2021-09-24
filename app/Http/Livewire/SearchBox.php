@@ -9,6 +9,7 @@ use App\Models\Product;
 class SearchBox extends Component
 {
     public $search = "";
+    public $hasSearched = true;
 
     public $category = "";
 
@@ -32,6 +33,9 @@ class SearchBox extends Component
             return $query->where('title', "LIKE" , "%$search%");
         })->get();
 
+        if(count($this->searchedProducts) > 0){
+            $this->hasSearched = true;
+        }
     }
 
 

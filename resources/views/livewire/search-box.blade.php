@@ -12,8 +12,8 @@
             @endforeach
 
         </select>
-        <div class="search-results-wrapper">
-            <div class="search-results">
+        <div class="search-results-wrapper" >
+            <div class="search-results"  >
                 
 
                 
