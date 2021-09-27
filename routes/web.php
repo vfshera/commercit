@@ -28,6 +28,8 @@ Route::prefix('/collections')->name('collections.')->group(function () {
 
     Route::get('/featured', ProductCollection::class)->name('featured');
 
+    Route::get('/categories', [PagesController::class , 'categories'])->name('categories');
+
     Route::get('/product-view/{product}-{productSlug}', ProductView::class)->name('product-view');
 
 });

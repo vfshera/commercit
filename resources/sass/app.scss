@@ -157,7 +157,7 @@ header.breadcrumbs {
             min-height: $brandMinHeight;
             width: 100%;
 
-            span {
+            a {
                 font-size: 20px;
                 color: $themeWhite;
             }
@@ -224,7 +224,7 @@ header.breadcrumbs {
                         }
 
                         a{
-                            @apply w-full;
+                            @apply w-full hover:text-primary-2;
                         }
                     }
                     
@@ -788,3 +788,59 @@ section.product-view {
 }
 
 // PRODUCT VIEW end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// CATEGORIES PAGE
+
+
+div.categories-wrapper{
+
+   
+
+    section.categories{
+        @apply  flex justify-start flex-wrap gap-6;
+
+        .category{
+            @apply overflow-hidden  rounded-md bg-primary-1  w-1/6 h-28   cursor-pointer hover:bg-primary-2 transition-all ease-in-out delay-75;
+
+
+            .category-cloak{
+            
+                @apply h-full w-full flex justify-center items-center bg-primary-1 bg-opacity-90;
+
+                span{
+                    @apply  text-white;
+                }
+    
+            }
+
+           
+            &:hover{
+                @apply  bg-opacity-30;
+
+                .category-cloak{
+                  @apply bg-primary-1 bg-opacity-40;
+
+                    span{
+                        @apply font-bold;
+                       }
+
+                }
+               
+            }
+        }
+    }
+}
+// CATEGORIES PAGE END

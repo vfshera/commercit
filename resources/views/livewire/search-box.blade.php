@@ -1,5 +1,5 @@
 <div class="brand-name-search">
-    <span>E-Comm Store</span>
+    <a href="{{ route('welcome') }}" >E-Comm Store</a>
     <form  wire:submit.prevent="search">
 
         <input type="text" wire:model.debounce.150ms="search" placeholder="Search Items ...">
