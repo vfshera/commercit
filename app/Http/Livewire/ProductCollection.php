@@ -73,6 +73,10 @@ class ProductCollection extends Component
                 return $productCategory->product;
             });
 
+            $this->filterGroups['brands'] = $this->products->map(function($product){
+                return $product->brand->name;
+            });
+
 
         $this->photos = getPhotos();
        
