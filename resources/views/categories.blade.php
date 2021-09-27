@@ -8,12 +8,16 @@
     <section class="categories ">
 
         @foreach($categories as $category)
-            <div class="category" style="background: url({{ $cimages[rand(0,5)] }}) no-repeat">
-                <div class="category-cloak">
-                    <span>{{ $category->name }}</span>
+        
+            <a href="{{ route('collections.category-view',['category' => $category,'categorySlug' => $category->slug]) }}">
+                <div class="category" style="background: url({{ $cimages[rand(0,5)] }}) no-repeat">
+                    <div class="category-cloak">
+                        <span>{{ $category->name }}</span>
+                    </div>
+                    
                 </div>
-                
-            </div>
+            </a>
+            
         @endforeach
     </section>
 </div>
