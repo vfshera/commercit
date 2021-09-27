@@ -2,14 +2,16 @@
 
 namespace App\Http\Livewire;
 
+use Livewire\Component;
+
 use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Http\Request;
-use Livewire\Component;
 use App\Models\Product;
 use Spatie\QueryBuilder\QueryBuilder;
 
-class ProductCollection extends Component
+
+class FeaturedCollection extends Component
 {
 
     public $sort;
@@ -19,10 +21,7 @@ class ProductCollection extends Component
     public $products;
     public $photos;
 
-    //if from category route
-    public Category $category;
-
-    public $breadCrumb = "";
+    public $breadCrumb = "> Featured";
 
 
 
@@ -67,13 +66,13 @@ class ProductCollection extends Component
 
 
     public function mount(){
-        $this->breadCrumb = "> Category > ".ucwords($this->category->name);
 
-            $this->products = $this->category->productCategories->map(function($productCategory){
-                return $productCategory->product;
-            });
+       
+            $this->filterGroups['brands'] = Brand::active()->pluck('name');
 
-
+            $this->products = QueryBuilder::for(Product::class)->defaultSort('title')->allowedSorts(['title' , 'price'])->get();
+            // $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
+     
         $this->photos = getPhotos();
        
     }
@@ -84,7 +83,6 @@ class ProductCollection extends Component
         return redirect()->route('collections.product-view',['product' => $product,'productSlug' => $product->slug]);
 
     }
-
 
     public function render()
     {

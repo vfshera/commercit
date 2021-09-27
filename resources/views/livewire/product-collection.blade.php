@@ -1,7 +1,7 @@
 <main class="collections-wrapper">
 
     <header class="breadcrumbs scecomm-container">
-        Home > Collections 
+        Home > Collections {{ $breadCrumb }}
     </header>
 
     <div class="collections scecomm-container">
