@@ -20,7 +20,7 @@ class Product extends Model
     }
 
     public function productTags(){
-        return $this->hasMany(ProductTag::class);
+        return $this->hasMany(ProductTag::class , 'product_id' , 'id');
     }
 
     public function productCategories(){

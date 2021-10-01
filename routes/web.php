@@ -29,7 +29,7 @@ Route::prefix('/collections')->name('collections.')->group(function () {
 
     Route::get('/featured', FeaturedCollection::class)->name('featured');
 
-    Route::get('/category/{category}-{categorySlug}', ProductCollection::class)->name('category-view');
+    Route::get('/category-{category}-{categorySlug}', ProductCollection::class)->name('category-view');
 
     Route::get('/categories', [PagesController::class , 'categories'])->name('categories');
 

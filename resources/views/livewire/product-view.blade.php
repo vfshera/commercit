@@ -1,6 +1,7 @@
 
 
-<div>
+<div class="product-view-wrapper">
+
     <header class="breadcrumbs scecomm-container">
         Home > Collections > Product View > {{ ucwords( $product->title ) }}
     </header>
@@ -90,4 +91,55 @@
             </div>
         </div>
     </section>
+
+    <section class="similar-products scecomm-container">
+        <div class="header">
+            <h3>Similar Products</h3>
+        </div>
+
+        <div class="similar-products-list">
+          
+
+            @foreach($similarProducts as $similarProduct)
+                <div class="similar-product">
+                    <img src="{{ $photos[rand(0,5)] }}" alt="{{ $similarProduct->title." Image" }}">
+                    <div class="product-info">
+                        <h6>
+                            
+                            @if(strlen($similarProduct->brand->name) > 20)
+
+                                {{ substr($similarProduct->brand->name, 0 ,20)."..." }}
+
+                            @else
+
+                                {{ $similarProduct->brand->name }}
+
+                            @endif
+
+                        </h4>
+                        <h5>
+
+                            @if(strlen($similarProduct->title) > 22)
+
+                                {{ substr($similarProduct->title, 0 ,22)."..." }}
+
+                            @else
+
+                                {{ $similarProduct->title }}
+
+                            @endif
+                        
+                        </h3>
+                        <p>Ksh.{{ $product->price }}</p>
+                    </div>
+
+                </div>
+            @endforeach
+
+        </div>
+
+
+    </section>
+
+
 </div>

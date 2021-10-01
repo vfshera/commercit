@@ -57,7 +57,7 @@ class ProductCollection extends Component
         }
 
 
-        redirect("/collections/featured/?sort=$this->sort");
+        redirect("/collections/category-" . $this->category->id . "-" . $this->category->slug ."/?sort=$this->sort");
 
     }
 
