@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Http\Resources\BrandMiniResource;
 use App\Models\Brand;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -74,8 +75,13 @@ class ProductCollection extends Component
             });
 
             $this->filterGroups['brands'] = $this->products->map(function($product){
-                return $product->brand->name;
-            });
+                return $product->brand->only(['id','name']);
+            })->unique('id')->all();
+
+
+            // ddd( $this->filterGroups);
+
+           
 
 
         $this->photos = getPhotos();

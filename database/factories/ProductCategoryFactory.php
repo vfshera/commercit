@@ -23,7 +23,7 @@ class ProductCategoryFactory extends Factory
     {
         return [
             'product_id' => rand(1,50),
-            'category_id' => rand(1,7)
+            'category_id' => rand(1,10)
         ];
     }
 }

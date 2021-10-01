@@ -67,10 +67,12 @@ class FeaturedCollection extends Component
 
     public function mount(){
 
+        
+        $this->products = QueryBuilder::for(Product::class)->defaultSort('title')->allowedSorts(['title' , 'price'])->get();
+
        
             $this->filterGroups['brands'] = Brand::active()->pluck('name');
 
-            $this->products = QueryBuilder::for(Product::class)->defaultSort('title')->allowedSorts(['title' , 'price'])->get();
             // $this->products = Product::with('brand','productTags')->orderBy('created_at','DESC')->get();
      
         $this->photos = getPhotos();

@@ -28,12 +28,18 @@
                                 <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}"  value="" id="{{ strtolower($filterGroup)."-filter" }}" checked>
                                 <label for="{{ strtolower($filterGroup)."-filter" }}">Any</label>
                             </div>
-            
-                            @foreach($filtersList as $filter)
-                                <div class="filter">
-                                    <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}" value="{{ strtolower($filter) }}" id="{{ strtolower($filterGroup)."-filter" }}">
-                                    <label for="{{ strtolower($filterGroup)."-filter" }}">{{ ucfirst($filter) }}</label>
-                                </div>
+
+                            
+                            
+                            @foreach($filtersList as $filter) 
+
+                                {{-- {{ array_keys($filter) }} --}}
+                         
+                                {{-- <div class="filter">
+                                    <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}" value="{{ $filter["id"] }}" id="{{ strtolower($filterGroup)."-filter" }}">
+                                    <label for="{{ strtolower($filterGroup)."-filter" }}">{{ ucfirst($filter["name"]) }}</label>
+                                </div> --}}
+
                             @endforeach
             
                             
