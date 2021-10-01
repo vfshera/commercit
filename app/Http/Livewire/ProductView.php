@@ -11,7 +11,7 @@ class ProductView extends Component
 
     public Product $product;
     public  $photos;
-    public  $similarProducts;
+    public  $similarProducts = [];
     public $displayPhoto;
 
     public function mount(){
@@ -19,18 +19,24 @@ class ProductView extends Component
         $similarTagIDs = $this->product->productTags->map(function($productTag){
             return $productTag->id;
         });
-
+        
+        
         $this->similarProducts = ProductTag::whereIn('id' , $similarTagIDs)->with('product.brand')->get()->map(function($ptag){
             return $ptag->product;
+        })->reject(function ($pro, $key) {
+            return $pro->id == $this->product->id;
         });
-        // $this->similarProducts = Product::whereHas('productTags', function ($query) use ($similarTagIDs){
-        //      return $query->whereIn('id', $similarTagIDs);
-        // })->get();
-
-        // ddd($this->similarProducts);
+        
 
         $this->photos = getPhotos();
         $this->displayPhoto = $this->photos[rand(0,5)];
+
+    }
+
+
+    public function viewProduct(Product $product){ 
+
+        return redirect()->route('collections.product-view',['product' => $product,'productSlug' => $product->slug]);
 
     }
 

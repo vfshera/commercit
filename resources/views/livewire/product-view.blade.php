@@ -92,23 +92,23 @@
         </div>
     </section>
 
-    <section class="similar-products scecomm-container">
-        <div class="header">
+    <section class="similar-products scecomm-container" x-data="{showSimilar: @entangle('similarProducts').length > 0}" x-show="showSimilar">
+        <div class="header" >
             <h3>Similar Products</h3>
         </div>
 
-        <div class="similar-products-list">
+        <div class="similar-products-list"  >
           
 
             @foreach($similarProducts as $similarProduct)
-                <div class="similar-product">
+                <div class="similar-product" wire:click="viewProduct({{ $similarProduct }})">
                     <img src="{{ $photos[rand(0,5)] }}" alt="{{ $similarProduct->title." Image" }}">
                     <div class="product-info">
                         <h6>
                             
-                            @if(strlen($similarProduct->brand->name) > 20)
+                            @if(strlen($similarProduct->brand->name) > 17)
 
-                                {{ substr($similarProduct->brand->name, 0 ,20)."..." }}
+                                {{ substr($similarProduct->brand->name, 0 ,17)."..." }}
 
                             @else
 
@@ -119,9 +119,9 @@
                         </h4>
                         <h5>
 
-                            @if(strlen($similarProduct->title) > 22)
+                            @if(strlen($similarProduct->title) > 17)
 
-                                {{ substr($similarProduct->title, 0 ,22)."..." }}
+                                {{ substr($similarProduct->title, 0 , 17)."..." }}
 
                             @else
 

@@ -761,11 +761,11 @@ main.collections-wrapper {
 
         .similar-products-list{
            
-            @apply flex gap-3 flex-wrap p-3 w-full bg-white;
+            @apply flex gap-3 flex-wrap p-3 w-full bg-white rounded-sm;
 
             .similar-product{
-                @apply w-1/4 h-52 p-1;
-
+                @apply w-1/5 h-52 p-1 cursor-pointer;
+                border: 1px rgba($themeDark, 0.2) solid;
                 img{
                     @apply h-2/3;
                 }
