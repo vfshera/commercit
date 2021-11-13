@@ -57,7 +57,7 @@
 
     <header class="product-actions">
 
-        <h3>Featured Products</h3>
+        <h3>{{ $pageName }} Products</h3>
 
         <div class="sorting">
             <span class="products-shown">Showing 1-10 of 20 Products</span>
@@ -65,7 +65,7 @@
             <div class="per-page-group">
 
                 <label for="per-page-select">Display: </label>
-                <select name="per-page-select" class="per-page-select" defaultValue="10">
+                <select wire:model="pages" name="per-page-select" class="per-page-select" defaultValue="10">
                     <option value="10">10 per page</option>
                     <option value="20">20 per page</option>
                 </select>
@@ -73,9 +73,10 @@
             
             <div class="sort-group" >
                 <label for="sort-by-select">Sort By: </label>
-                <select wire:model="sortVal" name="sort-by-select" class="sort-by-select" defaultValue="title">
+                <select wire:model="sortBy" name="sort-by-select" class="sort-by-select" defaultValue="title">
                     <option value="title">Title</option>
                     <option value="price">Price</option>
+                    <option value="created_at">Latest</option>
                 </select>
                 <select wire:model="sortMode" name="sort-by-select" class="sort-by-select" defaultValue="DESC">
                     <option value="DESC">DESC</option>

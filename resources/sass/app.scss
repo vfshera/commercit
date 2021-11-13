@@ -826,3 +826,7 @@ div.categories-wrapper {
     }
 }
 // CATEGORIES PAGE END
+
+.payment-portal{
+    @apply flex flex-col justify-center items-center min-h-full;
+}

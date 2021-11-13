@@ -23,7 +23,7 @@ class ProductTagFactory extends Factory
     {
         return [
            'product_id' => rand(1,50),
-           'tag_id' => rand(1,100)
+           'tag_id' => rand(1,10)
         ];
     }
 }

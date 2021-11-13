@@ -36,6 +36,7 @@
                         <div class="product-tags">             
                             
                             @foreach($product->productTags as $productTag)
+
                                 <span class="tag">{{  "#".strtolower($productTag->tag->name) }}</span>
                             @endforeach
                         </div>

@@ -10,7 +10,7 @@
       </div>
   
       <div class="copyright">
-        &copy; {{ config('app.name'). " " .date('Y')}} 
+        &copy; {{ config('app.name'). " " .date('Y')}}  | By Franklin Shera
       </div>
   
     </div>

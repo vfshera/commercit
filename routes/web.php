@@ -4,6 +4,7 @@ use App\Http\Controllers\PagesController;
 use App\Http\Livewire\{
     ProductCollection,
     FeaturedCollection,
+    PaymentPortal,
     ProductView
 };
 use Illuminate\Support\Facades\Route;
@@ -27,7 +28,7 @@ Route::get('/', [PagesController::class,'index'])->name('welcome');
 
 Route::prefix('/collections')->name('collections.')->group(function () {
 
-    Route::get('/featured', FeaturedCollection::class)->name('featured');
+    Route::get('/featured', ProductCollection::class)->name('featured');
 
     Route::get('/category-{category}-{categorySlug}', ProductCollection::class)->name('category-view');
 
@@ -36,6 +37,9 @@ Route::prefix('/collections')->name('collections.')->group(function () {
     Route::get('/product-view/{product}-{productSlug}', ProductView::class)->name('product-view');
 
 });
+
+Route::get('/payment', PaymentPortal::class)->name('payment-portal');
+
 
 
 

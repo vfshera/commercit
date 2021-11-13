@@ -35460,6 +35460,14 @@ div.categories-wrapper section.categories a .category:hover .category-cloak span
   font-weight: 700;
 }
 
+.payment-portal {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;

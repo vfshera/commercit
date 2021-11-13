@@ -8,28 +8,20 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Livewire\Component;
 use App\Models\Product;
-use Spatie\QueryBuilder\QueryBuilder;
 
 class ProductCollection extends Component
 {
-
-    public $sort;
-    public $sortVal;
+    public $pages = 10;
+    public $sortBy = "created_at";
     public $sortMode = "DESC";
 
     public $products;
     public $photos;
 
-    //if from category route
-    public Category $category;
+    public $pageName;
 
-    public $breadCrumb = "";
+    public $breadCrumb;
 
-
-
-    protected $queryString = ['sort'];
-
-    public $currPath;
 
     public $filterGroups = [
         "brands" => [],
@@ -40,64 +32,25 @@ class ProductCollection extends Component
 
 
 
-    public function setFilter(){
-       
-
-        if($this->sortMode === "DESC"){
-
-            $this->sort = "-".$this->sortVal;
-            
-            
-        }
-
-        if($this->sortMode === "ASC"){
-
-            $this->sort =  $this->sortVal;
-
-        }
-
-
-        redirect("/collections/category-" . $this->category->id . "-" . $this->category->slug ."/?sort=$this->sort");
-
-    }
-
-    public function updated(){
-        $this->setFilter();
-
-    }
-
-
-    public function mount(){
-        $this->breadCrumb = "> Category > ".ucwords($this->category->name);
-
-            $this->products = $this->category->productCategories->map(function($productCategory){
-                return $productCategory->product;
-            });
-
-            $this->filterGroups['brands'] = $this->products->map(function($product){
-                return $product->brand->only(['id','name']);
-            })->unique('id')->all();
-
-
-            // ddd( $this->filterGroups);
-
-           
-
-
-        $this->photos = getPhotos();
-       
-    }
-
-
     public function viewProduct(Product $product){ 
 
         return redirect()->route('collections.product-view',['product' => $product,'productSlug' => $product->slug]);
 
     }
 
+    public function mount(Category $category){
+        $this->pageName =   $category->name ?? 'Featured';
+        $this->breadCrumb =  "> ".$this->pageName;
+    }
 
     public function render()
     {
+        $this->filterGroups['brands'] = Brand::active()->pluck('name');
+     
+        $this->photos = getPhotos();
+
+        $this->products = Product::with('brand','productTags')->orderBy($this->sortBy,$this->sortMode)->get();
+
         return view('livewire.product-collection')->extends('layouts.base')->section('body');
     }
 }
