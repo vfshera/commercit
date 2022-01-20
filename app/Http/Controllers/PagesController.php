@@ -4,11 +4,15 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Category;
+use App\Models\Product;
 
 class PagesController extends Controller
 {
    public function index(){
-       return view('welcome');
+
+        $products = Product::orderBy('created_at','DESC')->take(6)->get();
+        
+       return view('welcome', compact('products'));
    }
 
    public function categories(){

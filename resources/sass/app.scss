@@ -38,7 +38,7 @@ body {
 
 body {
     // background: $themeWhite;
-    @apply bg-primary-3;
+    @apply bg-brand-3;
 }
 
 // GLOBALS
@@ -51,11 +51,11 @@ body {
     @apply flex justify-between;
 
     h3 {
-        @apply text-2xl text-primary-1;
+        @apply text-2xl text-brand-1;
     }
 
     a {
-        @apply flex font-bold text-base text-primary-2 transition-all duration-500;
+        @apply flex font-bold text-base text-brand-2 transition-all duration-500;
 
         svg {
             @apply -ml-5 opacity-20;
@@ -94,11 +94,11 @@ body {
     }
 
     h2 {
-        @apply text-primary-1 text-center w-full text-3xl  font-semibold;
+        @apply text-brand-1 text-center w-full text-3xl  font-semibold;
     }
 
     p {
-        @apply text-primary-4 text-center w-full text-lg;
+        @apply text-brand-4 text-center w-full text-lg;
     }
 
     form {
@@ -110,13 +110,13 @@ body {
             @apply p-3 rounded mb-2;
         }
         button {
-            @apply bg-primary-2 text-primary-3 rounded ml-2 py-2 px-5;
+            @apply bg-brand-2 text-brand-3 rounded ml-2 py-2 px-5;
         }
     }
 }
 
 header.breadcrumbs {
-    @apply my-5 text-primary-4 text-sm;
+    @apply my-5 text-brand-4 text-sm;
 }
 
 // end globals
@@ -124,7 +124,8 @@ header.breadcrumbs {
 // NAVBAR
 .navbar-wrapper {
     header {
-        background-color: $themeBlue;
+        // background-color: $themeBlue;
+        @apply bg-brand-1;
 
         .reach-us {
             @apply flex justify-between items-center;
@@ -164,7 +165,7 @@ header.breadcrumbs {
                 width: 85%;
                 height: 44px;
                 // overflow: hidden;
-                @apply bg-primary-3 rounded-md;
+                @apply bg-brand-3 rounded-md;
 
                 input {
                     width: 79%;
@@ -185,7 +186,7 @@ header.breadcrumbs {
                 }
                 button {
                     border: none;
-                    @apply flex justify-center items-center bg-primary-2;
+                    @apply flex justify-center items-center bg-brand-2;
                     width: 5%;
                     height: 100%;
 
@@ -199,22 +200,22 @@ header.breadcrumbs {
                     @apply relative z-50;
 
                     .search-results {
-                        @apply absolute top-20 right-0 bg-primary-1 text-white p-2;
+                        @apply absolute top-20 right-0 bg-brand-1 text-white p-2;
 
                         overflow-y: scroll;
                         max-height: 40vh;
 
                         p {
-                            @apply p-1 hover:text-primary-2 cursor-pointer;
+                            @apply p-1 hover:text-brand-2 cursor-pointer;
 
                             min-width: 400px;
 
                             &:not(:first-child) {
-                                @apply border-t  border-primary-3;
+                                @apply border-t  border-brand-3;
                             }
 
                             a {
-                                @apply w-full hover:text-primary-2;
+                                @apply w-full hover:text-brand-2;
                             }
                         }
                     }
@@ -260,17 +261,17 @@ section.showcase {
         @apply flex flex-col justify-center;
 
         h2 {
-            @apply text-primary-1 font-semibold;
+            @apply text-brand-1 font-semibold;
             font-size: 30px;
         }
 
         p {
-            @apply text-primary-1;
+            @apply text-brand-1;
             font-size: 14px;
         }
 
         button {
-            @apply border-none bg-primary-2 text-primary-3 py-3 w-1/6 mt-2 rounded;
+            @apply border-none bg-brand-2 text-brand-3 py-3 w-1/6 mt-2 rounded;
         }
     }
 }
@@ -303,11 +304,11 @@ section.products-view {
                 }
 
                 h3 {
-                    @apply text-primary-1 text-base font-semibold;
+                    @apply text-brand-1 text-base font-semibold;
                 }
 
                 p {
-                    @apply text-primary-2 text-xl;
+                    @apply text-brand-2 text-xl;
                 }
             }
 
@@ -328,46 +329,46 @@ section.filterable.products-view {
         height: 120px;
 
         h3 {
-            @apply text-2xl text-primary-1 font-semibold;
+            @apply text-2xl text-brand-1 font-semibold;
         }
 
         .sorting {
             @apply flex justify-between items-center;
 
             .products-shown {
-                @apply text-primary-4;
+                @apply text-brand-4;
             }
 
             .per-page-group {
-                @apply text-primary-4;
+                @apply text-brand-4;
 
                 label.per-page-select {
                 }
 
                 select.per-page-select {
-                    @apply border-0  text-primary-4 text-center h-10 px-2 bg-white  focus:outline-none appearance-none;
+                    @apply border-0  text-brand-4 text-center h-10 px-2 bg-white  focus:outline-none appearance-none;
                 }
             }
 
             .sort-group {
-                @apply text-primary-4;
+                @apply text-brand-4;
 
                 label.sort-by-select {
                 }
 
                 select.sort-by-select {
-                    @apply border-0  text-primary-4 text-center h-10 px-2 bg-white focus:outline-none appearance-none;
+                    @apply border-0  text-brand-4 text-center h-10 px-2 bg-white focus:outline-none appearance-none;
                 }
             }
 
             .product-view-style {
-                @apply text-primary-4;
+                @apply text-brand-4;
 
                 i {
                     @apply ml-3;
 
                     &.active {
-                        @apply text-primary-1;
+                        @apply text-brand-1;
                     }
                 }
             }
@@ -400,11 +401,11 @@ section.filterable.products-view {
                 }
 
                 h3 {
-                    @apply text-primary-1 text-base font-semibold;
+                    @apply text-brand-1 text-base font-semibold;
                 }
 
                 p {
-                    @apply text-primary-2 text-xl;
+                    @apply text-brand-2 text-xl;
                 }
             }
 
@@ -441,11 +442,11 @@ section.filterable.products-view {
                     }
 
                     h3 {
-                        @apply text-primary-1 text-base font-semibold w-3/5;
+                        @apply text-brand-1 text-base font-semibold w-3/5;
                     }
 
                     p {
-                        @apply text-primary-2 text-xl;
+                        @apply text-brand-2 text-xl;
                     }
                 }
 
@@ -477,7 +478,7 @@ section.shop-by-category {
                 }
             }
             h3 {
-                @apply text-primary-1 text-center w-full text-base mt-5 font-semibold;
+                @apply text-brand-1 text-center w-full text-base mt-5 font-semibold;
             }
         }
     }
@@ -490,7 +491,7 @@ section.our-assurances {
         @apply w-1/4 p-4 flex;
 
         i {
-            @apply text-primary-1 mr-3;
+            @apply text-brand-1 mr-3;
             font-size: 3rem;
         }
 
@@ -498,11 +499,11 @@ section.our-assurances {
             @apply flex flex-col gap-1;
 
             h3 {
-                @apply text-primary-1  w-full text-base;
+                @apply text-brand-1  w-full text-base;
             }
 
             p {
-                @apply text-primary-4  w-full text-base;
+                @apply text-brand-4  w-full text-base;
             }
         }
     }
@@ -529,20 +530,20 @@ footer {
 
         .drive {
             h3 {
-                @apply text-primary-1   text-base;
+                @apply text-brand-1   text-base;
             }
 
             p {
-                @apply text-primary-4 mt-5;
+                @apply text-brand-4 mt-5;
                 font-size: 16px;
                 span {
-                    @apply text-primary-1   text-base;
+                    @apply text-brand-1   text-base;
                 }
             }
         }
 
         .copyright {
-            @apply text-primary-4;
+            @apply text-brand-4;
             font-size: 20px;
         }
     }
@@ -551,7 +552,7 @@ footer {
         width: 20%;
 
         h3 {
-            @apply text-primary-1   text-base;
+            @apply text-brand-1   text-base;
         }
 
         ul {
@@ -559,7 +560,7 @@ footer {
 
             li {
                 a {
-                    @apply text-primary-4;
+                    @apply text-brand-4;
                     font-size: 16px;
                 }
             }
@@ -570,7 +571,7 @@ footer {
 // COLLECTIONS
 
 main.collections-wrapper {
-    @apply bg-primary-3;
+    @apply bg-brand-3;
 
     // min-height:70vh;
 
@@ -583,14 +584,14 @@ main.collections-wrapper {
             border: 1px rgba($themeDark, 0.4) solid;
 
             h1 {
-                @apply text-primary-1 text-2xl font-semibold;
+                @apply text-brand-1 text-2xl font-semibold;
             }
 
             .filter-group {
                 @apply my-6;
 
                 h3.title {
-                    @apply text-primary-1 text-base font-semibold;
+                    @apply text-brand-1 text-base font-semibold;
                 }
 
                 .filter-list {
@@ -641,11 +642,11 @@ main.collections-wrapper {
                 @apply bg-white p-4 mt-5 flex flex-col;
 
                 h2 {
-                    @apply text-primary-4 font-semibold;
+                    @apply text-brand-4 font-semibold;
                 }
 
                 p {
-                    @apply text-primary-4;
+                    @apply text-brand-4;
                 }
             }
         }
@@ -662,7 +663,7 @@ main.collections-wrapper {
                     border-bottom: 1px rgba($themeDark, 0.4) solid;
 
                     h1 {
-                        @apply text-primary-1 text-3xl font-semibold;
+                        @apply text-brand-1 text-3xl font-semibold;
                     }
 
                     .category-tags {
@@ -670,13 +671,13 @@ main.collections-wrapper {
 
                         .product-categories {
                             .category {
-                                @apply px-2 py-1 bg-primary-1 text-sm rounded-sm text-white;
+                                @apply px-2 py-1 bg-brand-1 text-sm rounded-sm text-white;
                             }
                         }
 
                         .product-tags {
                             .tag {
-                                @apply px-2 py-1 bg-primary-3 text-sm rounded-sm text-gray-600;
+                                @apply px-2 py-1 bg-brand-3 text-sm rounded-sm text-gray-600;
                             }
                         }
                     }
@@ -685,11 +686,11 @@ main.collections-wrapper {
                         @apply flex justify-between my-4;
 
                         .brand {
-                            @apply uppercase text-primary-4;
+                            @apply uppercase text-brand-4;
                         }
 
                         .share {
-                            @apply text-primary-4 hover:text-primary-1;
+                            @apply text-brand-4 hover:text-brand-1;
                         }
                     }
                 }
@@ -699,26 +700,26 @@ main.collections-wrapper {
 
                     .price {
                         label {
-                            @apply text-primary-1 font-semibold;
+                            @apply text-brand-1 font-semibold;
                         }
 
                         span {
-                            @apply text-primary-2 text-xl font-semibold;
+                            @apply text-brand-2 text-xl font-semibold;
                         }
                     }
 
                     .quantity {
                         label {
-                            @apply text-primary-1 font-semibold;
+                            @apply text-brand-1 font-semibold;
                         }
 
                         select {
-                            @apply text-primary-1 font-semibold p-1;
+                            @apply text-brand-1 font-semibold p-1;
                         }
                     }
 
                     button {
-                        @apply text-white bg-primary-1 text-center w-2/6 rounded-lg flex justify-center items-center px-8 py-3 font-semibold;
+                        @apply text-white bg-brand-1 text-center w-2/6 rounded-lg flex justify-center items-center px-8 py-3 font-semibold;
 
                         span {
                             .cart-icon {
@@ -741,7 +742,7 @@ main.collections-wrapper {
                 @apply w-full p-2 mt-5 flex flex-row flex-wrap gap-1;
 
                 img {
-                    @apply h-20  p-1 bg-primary-3 hover:bg-primary-2;
+                    @apply h-20  p-1 bg-brand-3 hover:bg-brand-2;
                 }
             }
         }
@@ -755,7 +756,7 @@ main.collections-wrapper {
         .header{
             @apply p-3 bg-white;
             h3{
-                @apply text-primary-1;
+                @apply text-brand-1;
             }
         }
 
@@ -777,11 +778,11 @@ main.collections-wrapper {
                     }
 
                     h5{
-                        @apply text-sm text-primary-1;
+                        @apply text-sm text-brand-1;
                     }
 
                     p{
-                        @apply text-sm text-primary-2;
+                        @apply text-sm text-brand-2;
                     }
                 }
             }
@@ -800,10 +801,10 @@ div.categories-wrapper {
             @apply w-1/6;
 
             .category {
-                @apply overflow-hidden  rounded-md bg-primary-1 h-28 cursor-pointer hover:bg-primary-2 transition-all ease-in-out delay-75;
+                @apply overflow-hidden  rounded-md bg-brand-1 h-28 cursor-pointer hover:bg-brand-2 transition-all ease-in-out delay-75;
 
                 .category-cloak {
-                    @apply h-full w-full flex justify-center items-center bg-primary-1 bg-opacity-80;
+                    @apply h-full w-full flex justify-center items-center bg-brand-1 bg-opacity-80;
 
                     span {
                         @apply text-white;
@@ -814,7 +815,7 @@ div.categories-wrapper {
                     @apply bg-opacity-30;
 
                     .category-cloak {
-                        @apply bg-primary-1 bg-opacity-40;
+                        @apply bg-brand-1 bg-opacity-40;
 
                         span {
                             @apply font-bold;

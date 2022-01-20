@@ -32,11 +32,6 @@ class ProductCollection extends Component
 
 
 
-    public function viewProduct(Product $product){ 
-
-        return redirect()->route('collections.product-view',['product' => $product,'productSlug' => $product->slug]);
-
-    }
 
     public function mount(Category $category){
         $this->pageName =   $category->name ?? 'Featured';
