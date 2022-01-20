@@ -12,16 +12,13 @@
                   <a href="{{ route('welcome') }}">Home</a>
               </li>
               <li>
-                  <a href="{{ route('collections.featured') }}">Stationery</a>
+                  <a href="{{ route('collections.categories') }}">Categories</a>
               </li>
               <li>
-                  <a href="{{ route('collections.featured') }}">IT</a>
+                  <a href="{{ route('collections.featured') }}">Featured</a>
               </li>
               <li>
-                  <a href="{{ route('collections.featured') }}">Furniture</a>
-              </li>
-              <li>
-                  <a href="{{ route('collections.featured') }}">About Us</a>
+                  <a href="{{ route('about') }}">About Us</a>
               </li>
           </ul>
 

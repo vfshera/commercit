@@ -35272,6 +35272,7 @@ main.collections-wrapper div.collections section.collections-products {
 }
 
 .product-view-wrapper section.product-view .detail-snaps aside.product-details .price-purchase .quantity select {
+  padding: 0.25rem;
   font-weight: 600;
   --tw-text-opacity: 1;
   color: rgba(30, 45, 125, var(--tw-text-opacity));

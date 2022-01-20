@@ -27,7 +27,7 @@ class SearchBox extends Component
 
     public function updated(){
 
-        if(!empty($this->category) || !empty($this->search)){
+        if(!empty($this->category) && !empty($this->search)){
 
             $this->searchedProducts = Product::when($this->category , function($query, $category_id){
                 return $query->where('brand_id', $category_id);

@@ -19,9 +19,6 @@
       <h3>CUSTOMER SERVICE</h3>
       <ul>
           <li>
-              <a href="#">Search</a>
-          </li>
-          <li>
               <a href="#">How It Works</a>
           </li>
           <li>
@@ -37,10 +34,10 @@
               <a href="#">Contact Us</a>
           </li>
           <li>
-              <a href="#">Privacy Policy</a>
+              <a href="{{ route('policy') }}">Privacy Policy</a>
           </li>
           <li>
-              <a href="#">Terms & Conditions</a>
+              <a href="{{ route('terms') }}">Terms & Conditions</a>
           </li>
       </ul>
     </div>

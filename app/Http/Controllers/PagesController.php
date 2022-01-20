@@ -27,6 +27,20 @@ class PagesController extends Controller
    }
 
 
+   public function terms(){
+    return view('terms');
+
+   }
+
+   public function policy(){
+    return view('policy');
+
+   }
+
+   public function about(){
+    return view('about');
+
+   }
 
 
 }

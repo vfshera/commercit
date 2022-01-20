@@ -1,8 +1,8 @@
 @extends('layouts.base')
 
 @section('body')
-<section class="policy">
+<section class="about">
 
-<h1>POLICY</h1>
+<h1>ABOUT</h1>
 </section>
 @endsection

@@ -40,6 +40,10 @@ Route::prefix('/collections')->name('collections.')->group(function () {
 
 Route::get('/payment', PaymentPortal::class)->name('payment-portal');
 
+Route::get('/terms', [PagesController::class , 'terms'])->name('terms');
+Route::get('/policy', [PagesController::class , 'policy'])->name('policy');
+Route::get('/about', [PagesController::class , 'about'])->name('about');
+
 
 
 
