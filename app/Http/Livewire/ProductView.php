@@ -19,17 +19,38 @@ class ProductView extends Component
         $similarTagIDs = $this->product->productTags->map(function($productTag){
             return $productTag->id;
         });
-        
-        dd($similarTagIDs);
+              
 
-        
-        $this->similarProducts = ProductTag::whereIn('id' , $similarTagIDs)->with('product.brand')->get()->map(function($ptag){
-            return $ptag->product;
-        })->reject(function ($pro, $key) {
-            return $pro->id == $this->product->id;
+        $similarCategoryIDs = $this->product->productCategories->map(function($prodCategory){
+            return $prodCategory->category_id;
         });
+
+        
+        // $this->similarProducts = ProductTag::whereIn('id' , $similarTagIDs)->with('product.brand')->get()->map(function($ptag){
+        //     return $ptag->product;
+        // })
+        // ->reject(function ($pro, $key) {
+        //     return $pro->id == $this->product->id;
+        // });
         
 
+
+        $this->similarProducts = Product::with(['productCategories' => function($prodCat) use ($similarCategoryIDs){
+
+            return $prodCat->whereIn('category_id',$similarCategoryIDs);
+
+        }, 'productTags.tag' => function($pTag) use ($similarTagIDs){
+
+            return $pTag->whereIn('id',$similarTagIDs);
+            
+        }])->take(5)->get();
+
+
+
+        // dd($other);
+
+
+        
         $this->photos = getPhotos();
         $this->displayPhoto = $this->photos[rand(0,5)];
 
