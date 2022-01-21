@@ -34557,6 +34557,11 @@ header.breadcrumbs {
   margin-right: 30px;
 }
 
+.navbar-wrapper nav ul span {
+  color: #677279;
+  font-size: 16px;
+}
+
 .navbar-wrapper .cart-wrapper {
   position: relative;
 }
@@ -34565,7 +34570,6 @@ header.breadcrumbs {
   position: absolute;
   right: 0px;
   z-index: 20;
-  width: 25%;
   border-bottom-right-radius: 0.25rem;
   border-bottom-left-radius: 0.25rem;
   border-width: 1px;
@@ -34578,11 +34582,57 @@ header.breadcrumbs {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.navbar-wrapper .cart-wrapper section.shopping-cart h6 {
+@media (min-width: 640px){
+  .navbar-wrapper .cart-wrapper section.shopping-cart{
+    width: 50%;
+  }
+}
+
+@media (min-width: 1024px){
+  .navbar-wrapper .cart-wrapper section.shopping-cart{
+    width: 33.333333%;
+  }
+}
+
+@media (min-width: 1280px){
+  .navbar-wrapper .cart-wrapper section.shopping-cart{
+    width: 25%;
+  }
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-header {
   margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-header h6 {
   font-weight: 700;
   --tw-text-opacity: 1;
   color: rgba(17, 24, 39, var(--tw-text-opacity));
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-header h6 span {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgba(55, 65, 81, var(--tw-text-opacity));
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-header a.full-cart {
+  display: flex;
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  --tw-text-opacity: 1;
+  color: rgba(51, 200, 226, var(--tw-text-opacity));
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-header a.full-cart svg {
+  margin-left: 0.5rem;
 }
 
 .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items {
@@ -34593,7 +34643,20 @@ header.breadcrumbs {
   padding-bottom: 0.5rem;
 }
 
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items .labels {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items .labels span {
+  width: 25%;
+  font-weight: 600;
+  --tw-text-opacity: 1;
+  color: rgba(30, 45, 125, var(--tw-text-opacity));
+}
+
 .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li {
+  position: relative;
   display: flex;
   cursor: pointer;
   align-items: center;
@@ -34613,10 +34676,46 @@ header.breadcrumbs {
 .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li{
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 
-.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li img {
-  width: 3.5rem;
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .product-image, .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .title, .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .quantity, .navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .price{
+  width: 25%;
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .product-image img {
+  height: 3rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  aspect-ratio: 1;
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li .glimpse {
+  position: absolute;
+  top: -2rem;
+  left: -9rem;
+  z-index: 40;
+  display: none;
+  --tw-scale-x: 0;
+  --tw-scale-y: 0;
+  border-radius: 0.25rem;
+  border-bottom-right-radius: 0px;
+  --tw-bg-opacity: 1;
+  background-color: rgba(51, 200, 226, var(--tw-bg-opacity));
+  padding: 0.5rem;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+  transition-delay: 200ms;
+}
+
+.navbar-wrapper .cart-wrapper section.shopping-cart .cart-items ul li:hover .glimpse {
+  display: inline-block;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
 }
 
 .navbar-wrapper .cart-wrapper section.shopping-cart .action {

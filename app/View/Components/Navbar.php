@@ -6,6 +6,8 @@ use Illuminate\View\Component;
 
 class Navbar extends Component
 {
+
+    public $showCart = false;
     /**
      * Create a new component instance.
      *

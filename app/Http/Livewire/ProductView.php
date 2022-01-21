@@ -20,6 +20,8 @@ class ProductView extends Component
             return $productTag->id;
         });
         
+        dd($similarTagIDs);
+
         
         $this->similarProducts = ProductTag::whereIn('id' , $similarTagIDs)->with('product.brand')->get()->map(function($ptag){
             return $ptag->product;
