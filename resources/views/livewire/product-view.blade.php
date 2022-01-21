@@ -97,8 +97,8 @@
     </div>
   </section>
 
-  <section class="similar-products scecomm-container" x-data="{showSimilar: @entangle('similarProducts').length > 0}"
-    x-show="showSimilar">
+  @if(count($similarProducts) > 0 )
+  <section class="similar-products scecomm-container">
     <div class="header">
       <h3>Similar Products</h3>
     </div>
@@ -147,5 +147,5 @@
 
   </section>
 
-
+  @endif
 </div>

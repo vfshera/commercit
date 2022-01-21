@@ -26,16 +26,11 @@ class ProductView extends Component
         });
 
         
-        // $this->similarProducts = ProductTag::whereIn('id' , $similarTagIDs)->with('product.brand')->get()->map(function($ptag){
-        //     return $ptag->product;
-        // })
-        // ->reject(function ($pro, $key) {
-        //     return $pro->id == $this->product->id;
-        // });
-        
+    
 
 
-        $this->similarProducts = Product::with(['productCategories' => function($prodCat) use ($similarCategoryIDs){
+        $this->similarProducts = Product::where('id','!=',$this->product->id)
+        ->with(['productCategories' => function($prodCat) use ($similarCategoryIDs){
 
             return $prodCat->whereIn('category_id',$similarCategoryIDs);
 
@@ -44,10 +39,6 @@ class ProductView extends Component
             return $pTag->whereIn('id',$similarTagIDs);
             
         }])->take(5)->get();
-
-
-
-        // dd($other);
 
 
         
