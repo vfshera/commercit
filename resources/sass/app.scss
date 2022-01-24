@@ -755,6 +755,13 @@ main.collections-wrapper {
                         .product-categories {
                             .category {
                                 @apply px-2 py-1 bg-brand-1 text-sm rounded-sm text-white;
+
+                                a {
+                                }
+
+                                &:not(:last-child) {
+                                    @apply mr-3;
+                                }
                             }
                         }
 

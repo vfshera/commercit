@@ -23,15 +23,7 @@ class ProductCollection extends Component
     public $breadCrumb;
 
 
-    public $filterGroups = [
-        "brands" => [],
-        "size" => ['5+','6+','Mini'],
-        "color" => ['Red','Green','Blue']
-    ];
-
-
-
-
+    public $filterGroups = [];
 
     public function mount(Category $category){
         $this->pageName =   $category->name ?? 'Featured';
@@ -41,6 +33,8 @@ class ProductCollection extends Component
     public function render()
     {
         $this->filterGroups['brands'] = Brand::active()->pluck('name');
+
+        // dd($this->filterGroups['brands']);
      
         $this->photos = getPhotos();
 

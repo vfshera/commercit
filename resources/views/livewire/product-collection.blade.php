@@ -20,93 +20,91 @@
           x-transition:leave-end="opacity-0 transform ">
 
           <div class="filter">
-            <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}" value=""
-              id="{{ strtolower($filterGroup)."-filter" }}" checked>
-            <label for="{{ strtolower($filterGroup)."-filter" }}">Any</label>
+            <input type="radio" name="{{ strtolower($filterGroup). '-filter' }}" value=""
+              id="{{ strtolower($filterGroup). '-filter' }}" checked>
+            <label for="{{ strtolower($filterGroup). '-filter' }}">Any</label>
           </div>
 
 
 
           @foreach($filtersList as $filter)
 
-          {{-- {{ array_keys($filter) }} --}}
-
-          {{-- <div class="filter">
-                                    <input type="radio" name="{{ strtolower($filterGroup)."-filter" }}"
-          value="{{ $filter["id"] }}" id="{{ strtolower($filterGroup)."-filter" }}">
-          <label for="{{ strtolower($filterGroup)."-filter" }}">{{ ucfirst($filter["name"]) }}</label>
-        </div> --}}
-
-        @endforeach
-
-
-
-      </div>
-
-  </div>
-  @endforeach
-  </aside>
-
-
-  <section class="collections-products">
-
-    <section class="filterable products-view " x-data="{ layout: 1}" :class="layout == 2 && 'listed' ">
-
-      <header class="product-actions">
-
-        <h3>{{ $pageName }} Products</h3>
-
-        <div class="sorting">
-          <span class="products-shown">Showing 1-10 of 20 Products</span>
-
-          <div class="per-page-group">
-
-            <label for="per-page-select">Display: </label>
-            <select wire:model="pages" name="per-page-select" class="per-page-select" defaultValue="10">
-              <option value="10">10 per page</option>
-              <option value="20">20 per page</option>
-            </select>
+          <div class="filter">
+            <input type="radio" name="{{ strtolower($filterGroup) . '-filter' }}" value="{{ $filter }}"
+              id="{{ strtolower($filterGroup) . '-filter' }}">
+            <label for="{{ strtolower($filterGroup).'-filter' }}">{{ ucfirst($filter) }}</label>
           </div>
 
-          <div class="sort-group">
-            <label for="sort-by-select">Sort By: </label>
-            <select wire:model="sortBy" name="sort-by-select" class="sort-by-select" defaultValue="title">
-              <option value="title">Title</option>
-              <option value="price">Price</option>
-              <option value="created_at">Latest</option>
-            </select>
-            <select wire:model="sortMode" name="sort-by-select" class="sort-by-select" defaultValue="DESC">
-              <option value="DESC">DESC</option>
-              <option value="ASC">ASC</option>
-            </select>
-          </div>
+          @endforeach
 
-          <div class="product-view-style">
-            View
-            <i class="ti-layout-grid3-alt" @click.prevent="layout = 1" :class=" layout == 1 && 'active'"></i>
-            <i class="ti-menu-alt" @click.prevent="layout = 2" :class=" layout == 2 && 'active' "></i>
-          </div>
+
+
         </div>
 
-      </header>
-
-      <div class="product-list">
-
-
-
-        @foreach($products as $product)
-
-        @livewire('product-tile' ,['product' => $product])
-
-        @endforeach
-
-
-
-
       </div>
-    </section>
+      @endforeach
+    </aside>
 
-  </section>
+
+    <section class="collections-products">
+
+      <section class="filterable products-view " x-data="{ layout: 1}" :class="layout == 2 && 'listed' ">
+
+        <header class="product-actions">
+
+          <h3>{{ $pageName }} Products</h3>
+
+          <div class="sorting">
+            <span class="products-shown">Showing 1-10 of 20 Products</span>
+
+            <div class="per-page-group">
+
+              <label for="per-page-select">Display: </label>
+              <select wire:model="pages" name="per-page-select" class="per-page-select" defaultValue="10">
+                <option value="10">10 per page</option>
+                <option value="20">20 per page</option>
+              </select>
+            </div>
+
+            <div class="sort-group">
+              <label for="sort-by-select">Sort By: </label>
+              <select wire:model="sortBy" name="sort-by-select" class="sort-by-select" defaultValue="title">
+                <option value="title">Title</option>
+                <option value="price">Price</option>
+                <option value="created_at">Latest</option>
+              </select>
+              <select wire:model="sortMode" name="sort-by-select" class="sort-by-select" defaultValue="DESC">
+                <option value="DESC">DESC</option>
+                <option value="ASC">ASC</option>
+              </select>
+            </div>
+
+            <div class="product-view-style">
+              View
+              <i class="ti-layout-grid3-alt" @click.prevent="layout = 1" :class=" layout == 1 && 'active'"></i>
+              <i class="ti-menu-alt" @click.prevent="layout = 2" :class=" layout == 2 && 'active' "></i>
+            </div>
+          </div>
+
+        </header>
+
+        <div class="product-list">
+
+
+
+          @foreach($products as $product)
+
+          @livewire('product-tile' ,['product' => $product])
+
+          @endforeach
+
+
+
+
+        </div>
+      </section>
+
+    </section>
   </div>
 
 

@@ -28,7 +28,14 @@
           <div class="category-tags">
             <div class="product-categories">
               @foreach($product->productCategories as $productCategory)
-              <span class="category">{{  strtolower($productCategory->category->name) }}</span>
+              <span class="category">
+                <a
+                  href="{{ route('collections.category-view',['category' => $productCategory->category,'categorySlug' => $productCategory->category->slug]) }}">
+                  {{  strtolower($productCategory->category->name) }}
+
+                  {{ var_dump($productCategory->category) }}
+                </a>
+              </span>
               @endforeach
             </div>
             <div class="product-tags">

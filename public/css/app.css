@@ -35390,6 +35390,10 @@ main.collections-wrapper div.collections section.collections-products {
   color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 
+.product-view-wrapper section.product-view .detail-snaps aside.product-details .info .category-tags .product-categories .category:not(:last-child) {
+  margin-right: 0.75rem;
+}
+
 .product-view-wrapper section.product-view .detail-snaps aside.product-details .info .category-tags .product-tags .tag {
   border-radius: 0.125rem;
   --tw-bg-opacity: 1;
