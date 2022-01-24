@@ -34793,6 +34793,7 @@ section.products-view .product-list .product {
   height: 390px;
   display: flex;
   width: 16.666667%;
+  cursor: pointer;
   flex-direction: column;
   justify-content: space-between;
   padding: 1rem;
@@ -35023,6 +35024,7 @@ section.filterable.products-view.listed .product-list .product {
   height: 90px !important;
   width: 100% !important;
   display: flex;
+  cursor: pointer;
   flex-direction: row;
   justify-content: space-between;
   padding: 1rem;

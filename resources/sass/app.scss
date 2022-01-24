@@ -123,7 +123,6 @@ header.breadcrumbs {
 
 // NAVBAR
 .navbar-wrapper {
-
     header {
         // background-color: $themeBlue;
         @apply bg-brand-1;
@@ -226,7 +225,7 @@ header.breadcrumbs {
     }
 
     nav {
-        @apply flex justify-between items-center bg-white ;
+        @apply flex justify-between items-center bg-white;
         height: 64px;
         border-bottom: 1px rgba($themeDark, 0.4) solid;
         padding: $generalPadding;
@@ -279,7 +278,7 @@ header.breadcrumbs {
                 a.full-cart {
                     @apply text-base font-normal text-brand-2 cursor-pointer flex;
 
-                    svg{
+                    svg {
                         @apply ml-2;
                     }
                 }
@@ -372,7 +371,7 @@ section.products-view {
 
         .product {
             height: 390px;
-            @apply w-1/6 p-4 flex flex-col justify-between;
+            @apply w-1/6 p-4 flex flex-col justify-between cursor-pointer;
 
             img {
                 max-height: 60%;
@@ -510,7 +509,7 @@ section.filterable.products-view {
             .product {
                 height: 90px !important;
                 width: 100% !important;
-                @apply p-4 flex flex-row justify-between;
+                @apply p-4 flex flex-row justify-between cursor-pointer;
 
                 img {
                     max-height: 100% !important;
